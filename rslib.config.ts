@@ -5,7 +5,7 @@ export default defineConfig({
   source: {
     tsconfigPath: './tsconfig.lib.json',
     entry: {
-      index: ['./src/lib/**'],
+      index: ['./src/lib/**', '!./src/lib/styles/**'],
     },
   },
   resolve: {
@@ -22,6 +22,12 @@ export default defineConfig({
   ],
   output: {
     target: 'web',
+    copy: [
+      {
+        from: 'src/lib/styles',
+        to: 'styles',
+      },
+    ],
   },
   plugins: [pluginReact()],
 });

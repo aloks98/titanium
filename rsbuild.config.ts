@@ -14,4 +14,12 @@ export default defineConfig({
       '@': './src/lib',
     },
   },
+  output: {
+    copy: [
+      {
+        from: 'src/lib/styles',
+        to: 'styles',
+      },
+    ],
+  },
 });
