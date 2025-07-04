@@ -71,6 +71,8 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<'div'>) {
     <div
       tabIndex={-1}
       data-slot="input-otp-separator"
+      // biome-ignore lint/a11y/useSemanticElements: breaks css
+      // biome-ignore lint/a11y/useAriaPropsForRole: it is secret
       role="separator"
       {...props}
     >

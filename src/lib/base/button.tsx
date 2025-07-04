@@ -1,5 +1,5 @@
 import { Slot } from '@radix-ui/react-slot';
-import { type VariantProps, cva } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import type * as React from 'react';
 
@@ -75,7 +75,8 @@ function Button({
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              props.onClick?.(e);
+              // biome-ignore lint/suspicious/noExplicitAny: key down does not emit a MouseEventHandler
+              props.onClick?.(e as any);
             }
           }}
           {...props}
@@ -98,6 +99,7 @@ function Button({
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          // biome-ignore lint/suspicious/noExplicitAny: key down does not emit a MouseEventHandler
           props.onClick?.(e as any);
         }
       }}

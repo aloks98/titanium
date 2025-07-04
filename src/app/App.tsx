@@ -1,4 +1,6 @@
 import '../lib/globals.css';
+import { Moon, Sun } from 'lucide-react';
+import { type ReactNode, useState } from 'react';
 import { Button } from '@/base/button';
 import {
   DropdownMenu,
@@ -15,8 +17,6 @@ import {
   SelectValue,
 } from '@/base/select';
 import { useTheme } from '@/base/theme-provider';
-import { Moon, Sun } from 'lucide-react';
-import { type ReactNode, useState } from 'react';
 import { AccordionDemo } from './demo/accordion-demo';
 
 const components = [
@@ -52,7 +52,9 @@ const App = () => {
           <SelectContent>
             <SelectGroup>
               {components.map((c) => (
-                <SelectItem value={c.name}>{c.name}</SelectItem>
+                <SelectItem key={c.name} value={c.name}>
+                  {c.name}
+                </SelectItem>
               ))}
             </SelectGroup>
           </SelectContent>

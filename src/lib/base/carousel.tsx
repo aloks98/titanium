@@ -121,6 +121,7 @@ function Carousel({
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
+        // biome-ignore lint/a11y/useSemanticElements: the heart want what it wants
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
