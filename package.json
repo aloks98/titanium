@@ -6,7 +6,9 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./styles": "./dist/styles/globals.css",
+    "./styles/*": "./dist/styles/*"
   },
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

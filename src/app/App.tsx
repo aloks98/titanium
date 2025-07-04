@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import { Moon, Sun, Palette } from 'lucide-react';
+import { Moon, Palette, Sun } from 'lucide-react';
 import { type ReactNode, useState } from 'react';
 import { Button } from '@/base/button';
 import {
@@ -18,7 +18,11 @@ import {
 } from '@/base/select';
 import { useTheme } from '@/base/theme-provider';
 import { AccordionDemo } from './demo/accordion-demo';
-import {AlertDemo} from "./demo/alert-demo.tsx";
+import { AlertDemo } from './demo/alert-demo.tsx';
+import { AlertDialogDemo } from './demo/alert-dialog-demo.tsx';
+import { AvatarDemo } from './demo/avatar-demo.tsx';
+import { BadgeDemo } from './demo/badge-demo.tsx';
+import { BreadcrumbDemo } from './demo/breadcrumbs-demo.tsx';
 
 const components = [
   {
@@ -27,8 +31,24 @@ const components = [
   },
   {
     name: 'Alert',
-    component: <AlertDemo />
-  }
+    component: <AlertDemo />,
+  },
+  {
+    name: 'Alert Dialog',
+    component: <AlertDialogDemo />,
+  },
+  {
+    name: 'Avatar',
+    component: <AvatarDemo />,
+  },
+  {
+    name: 'Badge',
+    component: <BadgeDemo />,
+  },
+  {
+    name: 'Breadcrumbs',
+    component: <BreadcrumbDemo />,
+  },
 ];
 
 const App = () => {
@@ -105,7 +125,9 @@ const App = () => {
               <DropdownMenuItem onClick={() => setThemeColorScheme('mono')}>
                 Mono
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setThemeColorScheme('starry-night')}>
+              <DropdownMenuItem
+                onClick={() => setThemeColorScheme('starry-night')}
+              >
                 Starry Night
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setThemeColorScheme('vintage')}>

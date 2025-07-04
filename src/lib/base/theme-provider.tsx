@@ -2,7 +2,13 @@ import type React from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 type Theme = 'dark' | 'light' | 'system';
-type ThemeColorScheme = 'default' | 'amber' | 'doom' | 'mono' | 'starry-night' | 'vintage';
+type ThemeColorScheme =
+  | 'default'
+  | 'amber'
+  | 'doom'
+  | 'mono'
+  | 'starry-night'
+  | 'vintage';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -32,22 +38,31 @@ export function ThemeProvider({
   children,
   defaultTheme = 'system',
   storageKey = 'ui-theme',
-    defaultThemeColorScheme = 'default',
-    colorSchemeStorageKey = 'ui-theme-color-schema',
+  defaultThemeColorScheme = 'default',
+  colorSchemeStorageKey = 'ui-theme-color-schema',
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
   );
   const [themeColorScheme, setThemeColorScheme] = useState<ThemeColorScheme>(
-    () => (localStorage.getItem(colorSchemeStorageKey) as ThemeColorScheme) || defaultThemeColorScheme,
+    () =>
+      (localStorage.getItem(colorSchemeStorageKey) as ThemeColorScheme) ||
+      defaultThemeColorScheme,
   );
 
   useEffect(() => {
     const root = window.document.documentElement;
 
     root.classList.remove('light', 'dark');
-    root.classList.remove('default', 'amber', 'doom', 'mono', 'starry-night', 'vintage');
+    root.classList.remove(
+      'default',
+      'amber',
+      'doom',
+      'mono',
+      'starry-night',
+      'vintage',
+    );
 
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
@@ -59,7 +74,7 @@ export function ThemeProvider({
       return;
     }
 
-    root.classList.add(themeColorScheme)
+    root.classList.add(themeColorScheme);
     root.classList.add(theme);
   }, [theme, themeColorScheme]);
 
@@ -73,7 +88,7 @@ export function ThemeProvider({
     setThemeColorScheme: (themeColorScheme: ThemeColorScheme) => {
       localStorage.setItem(colorSchemeStorageKey, themeColorScheme);
       setThemeColorScheme(themeColorScheme);
-    }
+    },
   };
 
   return (
