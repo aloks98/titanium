@@ -263,7 +263,7 @@ export {
 } from '@/base/table';
 export { Tabs, TabsContent, TabsList, TabsTrigger } from '@/base/tabs';
 export { Textarea } from '@/base/textarea';
-export { useTheme } from '@/base/theme-provider';
+export { ThemeProvider, useTheme } from '@/base/theme-provider';
 export { Toggle, toggleVariants as getToggleVariants } from '@/base/toggle';
 export { ToggleGroup, ToggleGroupItem } from '@/base/toggle-group';
 export {
@@ -272,4 +272,18 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from '@/base/tooltip';
+export {
+  TypographyH1,
+  TypographyH2,
+  TypographyH3,
+  TypographyH4,
+  TypographyP,
+  TypographyBlockquote,
+  TypographyList,
+  TypographyInlineCode,
+  TypographyLead,
+  TypographyLarge,
+  TypographySmall,
+  TypographyMuted
+} from "@/base/typography"
 export { cn } from './utils';

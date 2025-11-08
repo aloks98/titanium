@@ -1,6 +1,6 @@
 {
-  "name": "titanium",
-  "version": "1.0.0",
+  "name": "@e412/titanium",
+  "version": "0.0.7",
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +24,7 @@
     "format": "biome format --write",
     "storybook": "storybook dev",
     "test": "vitest run",
-    "dev": "rsbuild dev"
+    "dev": "rsbuild dev --port 3002"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.0",
@@ -53,7 +53,7 @@
     "typescript": "^5.8.2",
     "vitest": "^3.0.9"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -90,7 +90,7 @@
     "lucide-react": "^0.487.0",
     "next-themes": "^0.4.6",
     "react": ">=16.9.0",
-    "react-day-picker": "8.10.1",
+    "react-day-picker": "9.7.0",
     "react-dom": ">=16.9.0",
     "react-hook-form": "^7.55.0",
     "react-resizable-panels": "^2.1.7",
@@ -99,11 +99,9 @@
     "tailwind-merge": "^3.2.0",
     "tw-animate-css": "^1.2.5",
     "vaul": "^1.1.2",
-    "zod": "^3.24.2"
-  },
-  "private": true,
-  "dependencies": {
+    "zod": "^3.24.2",
     "@tanstack/react-table": "^8.21.3",
     "framer-motion": "^12.6.5"
-  }
+  },
+  "private": false
 }

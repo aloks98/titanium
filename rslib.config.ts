@@ -1,16 +1,17 @@
 import { pluginReact } from '@rsbuild/plugin-react';
 import { defineConfig } from '@rslib/core';
+import path from "path";
 
 export default defineConfig({
   source: {
-    tsconfigPath: './tsconfig.lib.json',
+    tsconfigPath: path.resolve(__dirname, './tsconfig.lib.json'),
     entry: {
-      index: ['./src/lib/**', '!./src/lib/styles/**'],
+      index: ['./src/lib/**'],
     },
   },
   resolve: {
     alias: {
-      '@': './src/lib',
+      '@': path.resolve(__dirname, './src/lib'),
     },
   },
   lib: [
@@ -22,12 +23,6 @@ export default defineConfig({
   ],
   output: {
     target: 'web',
-    copy: [
-      {
-        from: 'src/lib/styles',
-        to: 'styles',
-      },
-    ],
   },
   plugins: [pluginReact()],
 });
