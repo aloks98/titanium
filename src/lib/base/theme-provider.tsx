@@ -45,11 +45,11 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
+    () => (typeof window !== 'undefined' ? (localStorage.getItem(storageKey) as Theme) : null) || defaultTheme,
   );
   const [themeColorScheme, setThemeColorScheme] = useState<ThemeColorScheme>(
     () =>
-      (localStorage.getItem(colorSchemeStorageKey) as ThemeColorScheme) ||
+      (typeof window !== 'undefined' ? (localStorage.getItem(colorSchemeStorageKey) as ThemeColorScheme) : null) ||
       defaultThemeColorScheme,
   );
 
