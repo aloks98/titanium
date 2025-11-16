@@ -1,15 +1,15 @@
-import { describe, it, expect, vi } from 'vitest'
-import { render, screen } from '../test-utils'
+import { describe, expect, it } from 'vitest';
 import {
   Table,
-  TableHeader,
   TableBody,
+  TableCaption,
+  TableCell,
   TableFooter,
   TableHead,
+  TableHeader,
   TableRow,
-  TableCell,
-  TableCaption,
-} from '@/base/table'
+} from '@/base/table';
+import { render, screen } from '../test-utils';
 
 describe('Table', () => {
   it('renders correctly', () => {
@@ -20,13 +20,13 @@ describe('Table', () => {
             <TableCell>Cell content</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const table = screen.getByRole('table')
-    expect(table).toBeInTheDocument()
-    expect(table).toHaveAttribute('data-slot', 'table')
-  })
+      </Table>,
+    );
+
+    const table = screen.getByRole('table');
+    expect(table).toBeInTheDocument();
+    expect(table).toHaveAttribute('data-slot', 'table');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -36,12 +36,12 @@ describe('Table', () => {
             <TableCell>Content</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const table = screen.getByRole('table')
-    expect(table).toHaveClass('w-full', 'caption-bottom', 'text-sm')
-  })
+      </Table>,
+    );
+
+    const table = screen.getByRole('table');
+    expect(table).toHaveClass('w-full', 'caption-bottom', 'text-sm');
+  });
 
   it('renders with container wrapper', () => {
     render(
@@ -51,14 +51,14 @@ describe('Table', () => {
             <TableCell>Content</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const table = screen.getByTestId('table')
-    const container = table.parentElement
-    expect(container).toHaveAttribute('data-slot', 'table-container')
-    expect(container).toHaveClass('relative', 'w-full', 'overflow-x-auto')
-  })
+      </Table>,
+    );
+
+    const table = screen.getByTestId('table');
+    const container = table.parentElement;
+    expect(container).toHaveAttribute('data-slot', 'table-container');
+    expect(container).toHaveClass('relative', 'w-full', 'overflow-x-auto');
+  });
 
   it('accepts custom className', () => {
     render(
@@ -68,13 +68,13 @@ describe('Table', () => {
             <TableCell>Content</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const table = screen.getByRole('table')
-    expect(table).toHaveClass('custom-table')
-  })
-})
+      </Table>,
+    );
+
+    const table = screen.getByRole('table');
+    expect(table).toHaveClass('custom-table');
+  });
+});
 
 describe('TableHeader', () => {
   it('renders correctly', () => {
@@ -85,14 +85,14 @@ describe('TableHeader', () => {
             <TableHead>Header</TableHead>
           </TableRow>
         </TableHeader>
-      </Table>
-    )
-    
-    const header = screen.getByTestId('table-header')
-    expect(header).toBeInTheDocument()
-    expect(header.tagName).toBe('THEAD')
-    expect(header).toHaveAttribute('data-slot', 'table-header')
-  })
+      </Table>,
+    );
+
+    const header = screen.getByTestId('table-header');
+    expect(header).toBeInTheDocument();
+    expect(header.tagName).toBe('THEAD');
+    expect(header).toHaveAttribute('data-slot', 'table-header');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -102,12 +102,12 @@ describe('TableHeader', () => {
             <TableHead>Header</TableHead>
           </TableRow>
         </TableHeader>
-      </Table>
-    )
-    
-    const header = screen.getByTestId('table-header')
-    expect(header).toHaveClass('[&_tr]:border-b')
-  })
+      </Table>,
+    );
+
+    const header = screen.getByTestId('table-header');
+    expect(header).toHaveClass('[&_tr]:border-b');
+  });
 
   it('accepts custom className', () => {
     render(
@@ -117,12 +117,12 @@ describe('TableHeader', () => {
             <TableHead>Header</TableHead>
           </TableRow>
         </TableHeader>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-header')).toHaveClass('custom-header')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-header')).toHaveClass('custom-header');
+  });
+});
 
 describe('TableBody', () => {
   it('renders correctly', () => {
@@ -133,14 +133,14 @@ describe('TableBody', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const body = screen.getByTestId('table-body')
-    expect(body).toBeInTheDocument()
-    expect(body.tagName).toBe('TBODY')
-    expect(body).toHaveAttribute('data-slot', 'table-body')
-  })
+      </Table>,
+    );
+
+    const body = screen.getByTestId('table-body');
+    expect(body).toBeInTheDocument();
+    expect(body.tagName).toBe('TBODY');
+    expect(body).toHaveAttribute('data-slot', 'table-body');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -150,12 +150,12 @@ describe('TableBody', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const body = screen.getByTestId('table-body')
-    expect(body).toHaveClass('[&_tr:last-child]:border-0')
-  })
+      </Table>,
+    );
+
+    const body = screen.getByTestId('table-body');
+    expect(body).toHaveClass('[&_tr:last-child]:border-0');
+  });
 
   it('accepts custom className', () => {
     render(
@@ -165,12 +165,12 @@ describe('TableBody', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-body')).toHaveClass('custom-body')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-body')).toHaveClass('custom-body');
+  });
+});
 
 describe('TableFooter', () => {
   it('renders correctly', () => {
@@ -181,14 +181,14 @@ describe('TableFooter', () => {
             <TableCell>Footer</TableCell>
           </TableRow>
         </TableFooter>
-      </Table>
-    )
-    
-    const footer = screen.getByTestId('table-footer')
-    expect(footer).toBeInTheDocument()
-    expect(footer.tagName).toBe('TFOOT')
-    expect(footer).toHaveAttribute('data-slot', 'table-footer')
-  })
+      </Table>,
+    );
+
+    const footer = screen.getByTestId('table-footer');
+    expect(footer).toBeInTheDocument();
+    expect(footer.tagName).toBe('TFOOT');
+    expect(footer).toHaveAttribute('data-slot', 'table-footer');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -198,17 +198,17 @@ describe('TableFooter', () => {
             <TableCell>Footer</TableCell>
           </TableRow>
         </TableFooter>
-      </Table>
-    )
-    
-    const footer = screen.getByTestId('table-footer')
+      </Table>,
+    );
+
+    const footer = screen.getByTestId('table-footer');
     expect(footer).toHaveClass(
       'bg-muted/50',
       'border-t',
       'font-medium',
-      '[&>tr]:last:border-b-0'
-    )
-  })
+      '[&>tr]:last:border-b-0',
+    );
+  });
 
   it('accepts custom className', () => {
     render(
@@ -218,12 +218,12 @@ describe('TableFooter', () => {
             <TableCell>Footer</TableCell>
           </TableRow>
         </TableFooter>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-footer')).toHaveClass('custom-footer')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-footer')).toHaveClass('custom-footer');
+  });
+});
 
 describe('TableRow', () => {
   it('renders correctly', () => {
@@ -234,14 +234,14 @@ describe('TableRow', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const row = screen.getByTestId('table-row')
-    expect(row).toBeInTheDocument()
-    expect(row.tagName).toBe('TR')
-    expect(row).toHaveAttribute('data-slot', 'table-row')
-  })
+      </Table>,
+    );
+
+    const row = screen.getByTestId('table-row');
+    expect(row).toBeInTheDocument();
+    expect(row.tagName).toBe('TR');
+    expect(row).toHaveAttribute('data-slot', 'table-row');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -251,17 +251,17 @@ describe('TableRow', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const row = screen.getByTestId('table-row')
+      </Table>,
+    );
+
+    const row = screen.getByTestId('table-row');
     expect(row).toHaveClass(
       'hover:bg-muted/50',
       'data-[state=selected]:bg-muted',
       'border-b',
-      'transition-colors'
-    )
-  })
+      'transition-colors',
+    );
+  });
 
   it('accepts custom className', () => {
     render(
@@ -271,12 +271,12 @@ describe('TableRow', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-row')).toHaveClass('custom-row')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-row')).toHaveClass('custom-row');
+  });
+});
 
 describe('TableHead', () => {
   it('renders correctly', () => {
@@ -287,14 +287,14 @@ describe('TableHead', () => {
             <TableHead data-testid="table-head">Header</TableHead>
           </TableRow>
         </TableHeader>
-      </Table>
-    )
-    
-    const head = screen.getByTestId('table-head')
-    expect(head).toBeInTheDocument()
-    expect(head.tagName).toBe('TH')
-    expect(head).toHaveAttribute('data-slot', 'table-head')
-  })
+      </Table>,
+    );
+
+    const head = screen.getByTestId('table-head');
+    expect(head).toBeInTheDocument();
+    expect(head.tagName).toBe('TH');
+    expect(head).toHaveAttribute('data-slot', 'table-head');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -304,10 +304,10 @@ describe('TableHead', () => {
             <TableHead data-testid="table-head">Header</TableHead>
           </TableRow>
         </TableHeader>
-      </Table>
-    )
-    
-    const head = screen.getByTestId('table-head')
+      </Table>,
+    );
+
+    const head = screen.getByTestId('table-head');
     expect(head).toHaveClass(
       'text-foreground',
       'h-10',
@@ -317,24 +317,26 @@ describe('TableHead', () => {
       'font-medium',
       'whitespace-nowrap',
       '[&:has([role=checkbox])]:pr-0',
-      '[&>[role=checkbox]]:translate-y-[2px]'
-    )
-  })
+      '[&>[role=checkbox]]:translate-y-[2px]',
+    );
+  });
 
   it('accepts custom className', () => {
     render(
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="custom-head" data-testid="table-head">Header</TableHead>
+            <TableHead className="custom-head" data-testid="table-head">
+              Header
+            </TableHead>
           </TableRow>
         </TableHeader>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-head')).toHaveClass('custom-head')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-head')).toHaveClass('custom-head');
+  });
+});
 
 describe('TableCell', () => {
   it('renders correctly', () => {
@@ -345,14 +347,14 @@ describe('TableCell', () => {
             <TableCell data-testid="table-cell">Cell content</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const cell = screen.getByTestId('table-cell')
-    expect(cell).toBeInTheDocument()
-    expect(cell.tagName).toBe('TD')
-    expect(cell).toHaveAttribute('data-slot', 'table-cell')
-  })
+      </Table>,
+    );
+
+    const cell = screen.getByTestId('table-cell');
+    expect(cell).toBeInTheDocument();
+    expect(cell.tagName).toBe('TD');
+    expect(cell).toHaveAttribute('data-slot', 'table-cell');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -362,33 +364,35 @@ describe('TableCell', () => {
             <TableCell data-testid="table-cell">Cell content</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const cell = screen.getByTestId('table-cell')
+      </Table>,
+    );
+
+    const cell = screen.getByTestId('table-cell');
     expect(cell).toHaveClass(
       'p-2',
       'align-middle',
       'whitespace-nowrap',
       '[&:has([role=checkbox])]:pr-0',
-      '[&>[role=checkbox]]:translate-y-[2px]'
-    )
-  })
+      '[&>[role=checkbox]]:translate-y-[2px]',
+    );
+  });
 
   it('accepts custom className', () => {
     render(
       <Table>
         <TableBody>
           <TableRow>
-            <TableCell className="custom-cell" data-testid="table-cell">Cell content</TableCell>
+            <TableCell className="custom-cell" data-testid="table-cell">
+              Cell content
+            </TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-cell')).toHaveClass('custom-cell')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-cell')).toHaveClass('custom-cell');
+  });
+});
 
 describe('TableCaption', () => {
   it('renders correctly', () => {
@@ -400,14 +404,14 @@ describe('TableCaption', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const caption = screen.getByTestId('table-caption')
-    expect(caption).toBeInTheDocument()
-    expect(caption.tagName).toBe('CAPTION')
-    expect(caption).toHaveAttribute('data-slot', 'table-caption')
-  })
+      </Table>,
+    );
+
+    const caption = screen.getByTestId('table-caption');
+    expect(caption).toBeInTheDocument();
+    expect(caption.tagName).toBe('CAPTION');
+    expect(caption).toHaveAttribute('data-slot', 'table-caption');
+  });
 
   it('has correct default styling', () => {
     render(
@@ -418,28 +422,30 @@ describe('TableCaption', () => {
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    const caption = screen.getByTestId('table-caption')
-    expect(caption).toHaveClass('text-muted-foreground', 'mt-4', 'text-sm')
-  })
+      </Table>,
+    );
+
+    const caption = screen.getByTestId('table-caption');
+    expect(caption).toHaveClass('text-muted-foreground', 'mt-4', 'text-sm');
+  });
 
   it('accepts custom className', () => {
     render(
       <Table>
-        <TableCaption className="custom-caption" data-testid="table-caption">Table caption</TableCaption>
+        <TableCaption className="custom-caption" data-testid="table-caption">
+          Table caption
+        </TableCaption>
         <TableBody>
           <TableRow>
             <TableCell>Cell</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
-    
-    expect(screen.getByTestId('table-caption')).toHaveClass('custom-caption')
-  })
-})
+      </Table>,
+    );
+
+    expect(screen.getByTestId('table-caption')).toHaveClass('custom-caption');
+  });
+});
 
 describe('Table Composition', () => {
   it('renders complete table with all components', () => {
@@ -474,30 +480,40 @@ describe('Table Composition', () => {
             <TableCell>$400.00</TableCell>
           </TableRow>
         </TableFooter>
-      </Table>
-    )
+      </Table>,
+    );
 
-    expect(screen.getByRole('table')).toBeInTheDocument()
-    expect(screen.getByText('A list of your recent invoices.')).toBeInTheDocument()
-    
-    expect(screen.getByRole('columnheader', { name: 'Invoice' })).toBeInTheDocument()
-    expect(screen.getByRole('columnheader', { name: 'Status' })).toBeInTheDocument()
-    expect(screen.getByRole('columnheader', { name: 'Method' })).toBeInTheDocument()
-    expect(screen.getByRole('columnheader', { name: 'Amount' })).toBeInTheDocument()
-    
-    expect(screen.getByText('INV001')).toBeInTheDocument()
-    expect(screen.getByText('Paid')).toBeInTheDocument()
-    expect(screen.getByText('Credit Card')).toBeInTheDocument()
-    expect(screen.getByText('$250.00')).toBeInTheDocument()
-    
-    expect(screen.getByText('INV002')).toBeInTheDocument()
-    expect(screen.getByText('Pending')).toBeInTheDocument()
-    expect(screen.getByText('PayPal')).toBeInTheDocument()
-    expect(screen.getByText('$150.00')).toBeInTheDocument()
-    
-    expect(screen.getByText('Total')).toBeInTheDocument()
-    expect(screen.getByText('$400.00')).toBeInTheDocument()
-  })
+    expect(screen.getByRole('table')).toBeInTheDocument();
+    expect(
+      screen.getByText('A list of your recent invoices.'),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('columnheader', { name: 'Invoice' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('columnheader', { name: 'Status' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('columnheader', { name: 'Method' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('columnheader', { name: 'Amount' }),
+    ).toBeInTheDocument();
+
+    expect(screen.getByText('INV001')).toBeInTheDocument();
+    expect(screen.getByText('Paid')).toBeInTheDocument();
+    expect(screen.getByText('Credit Card')).toBeInTheDocument();
+    expect(screen.getByText('$250.00')).toBeInTheDocument();
+
+    expect(screen.getByText('INV002')).toBeInTheDocument();
+    expect(screen.getByText('Pending')).toBeInTheDocument();
+    expect(screen.getByText('PayPal')).toBeInTheDocument();
+    expect(screen.getByText('$150.00')).toBeInTheDocument();
+
+    expect(screen.getByText('Total')).toBeInTheDocument();
+    expect(screen.getByText('$400.00')).toBeInTheDocument();
+  });
 
   it('renders table with selected rows', () => {
     render(
@@ -510,10 +526,10 @@ describe('Table Composition', () => {
             <TableCell>Normal Row</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    )
+      </Table>,
+    );
 
-    expect(screen.getByText('Selected Row')).toBeInTheDocument()
-    expect(screen.getByText('Normal Row')).toBeInTheDocument()
-  })
-})
+    expect(screen.getByText('Selected Row')).toBeInTheDocument();
+    expect(screen.getByText('Normal Row')).toBeInTheDocument();
+  });
+});

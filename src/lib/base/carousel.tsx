@@ -5,7 +5,6 @@ import useEmblaCarousel, {
 } from 'embla-carousel-react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import * as React from 'react';
-
 import { Button } from '@/base/button';
 import { cn } from '@/utils';
 
@@ -118,17 +117,17 @@ function Carousel({
         canScrollNext,
       }}
     >
-      <div
+      {/* biome-ignore lint/a11y/useSemanticElements: role="region" is the WAI-ARIA recommended pattern for carousels */}
+      <section
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
-        // biome-ignore lint/a11y/useSemanticElements: the heart want what it wants
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
         {...props}
       >
         {children}
-      </div>
+      </section>
     </CarouselContext.Provider>
   );
 }
@@ -158,6 +157,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
   const { orientation } = useCarousel();
 
   return (
+    /* biome-ignore lint/a11y/useSemanticElements: role="group" with aria-roledescription="slide" is the WAI-ARIA recommended pattern for carousel items */
     <div
       role="group"
       aria-roledescription="slide"

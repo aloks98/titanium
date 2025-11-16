@@ -1,5 +1,5 @@
+import path from 'node:path';
 import { defineConfig } from 'vitest/config';
-import path from 'path';
 
 export default defineConfig({
   // Configure Vitest (https://vitest.dev/config/)
@@ -11,5 +11,5 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src/lib'),
     },
-  }
+  },
 });

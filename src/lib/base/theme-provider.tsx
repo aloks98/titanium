@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import type React from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
@@ -45,12 +45,16 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (typeof window !== 'undefined' ? (localStorage.getItem(storageKey) as Theme) : null) || defaultTheme,
+    () =>
+      (typeof window !== 'undefined'
+        ? (localStorage.getItem(storageKey) as Theme)
+        : null) || defaultTheme,
   );
   const [themeColorScheme, setThemeColorScheme] = useState<ThemeColorScheme>(
     () =>
-      (typeof window !== 'undefined' ? (localStorage.getItem(colorSchemeStorageKey) as ThemeColorScheme) : null) ||
-      defaultThemeColorScheme,
+      (typeof window !== 'undefined'
+        ? (localStorage.getItem(colorSchemeStorageKey) as ThemeColorScheme)
+        : null) || defaultThemeColorScheme,
   );
 
   useEffect(() => {

@@ -34,12 +34,14 @@ export { Button, buttonVariants as getButtonVariant } from '@/base/button';
 export { Calendar } from '@/base/calendar';
 export {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
+  CardHeading,
+  CardTable,
   CardTitle,
+  CardToolbar,
 } from '@/base/card';
 export {
   Carousel,
@@ -55,6 +57,8 @@ export {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/base/collapsible';
+export * from '@/base/data-grid';
+export { DateField } from '@/base/datefield';
 export {
   Command,
   CommandDialog,
@@ -124,6 +128,7 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/base/dropdown-menu';
+export * from '@/base/filters';
 export {
   Form,
   FormControl,
@@ -146,7 +151,10 @@ export {
   InputOTPSeparator,
   InputOTPSlot,
 } from '@/base/input-otp';
+export * from '@/base/kanban';
+export { Kbd } from '@/base/kbd';
 export { Label } from '@/base/label';
+export { Marquee } from '@/base/marquee';
 export {
   Menubar,
   MenubarCheckboxItem,
@@ -181,9 +189,6 @@ export {
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from '@/base/pagination';
 export {
   Popover,
@@ -198,6 +203,8 @@ export {
   ResizablePanel,
   ResizablePanelGroup,
 } from '@/base/resizable';
+export { ScrollArea, ScrollBar } from '@/base/scroll-area';
+export * from '@/base/scrollspy';
 export {
   Select,
   SelectContent,
@@ -211,6 +218,8 @@ export {
   SelectValue,
 } from '@/base/select';
 export { Separator } from '@/base/separator';
+export { Spinner } from '@/base/spinner';
+export * from '@/base/stepper';
 export {
   Sheet,
   SheetClose,
@@ -272,18 +281,19 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from '@/base/tooltip';
+export * from '@/base/tree';
 export {
+  TypographyBlockquote,
   TypographyH1,
   TypographyH2,
   TypographyH3,
   TypographyH4,
-  TypographyP,
-  TypographyBlockquote,
-  TypographyList,
   TypographyInlineCode,
-  TypographyLead,
   TypographyLarge,
+  TypographyLead,
+  TypographyList,
+  TypographyMuted,
+  TypographyP,
   TypographySmall,
-  TypographyMuted
-} from "@/base/typography"
+} from '@/base/typography';
 export { cn } from './utils';
