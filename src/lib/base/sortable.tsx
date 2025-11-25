@@ -25,14 +25,6 @@ import { Slot as SlotPrimitive } from 'radix-ui';
 import * as React from 'react';
 import { cn } from '@/utils';
 
-export interface KanbanMoveEvent {
-  event: DragEndEvent;
-  activeContainer: string;
-  activeIndex: number;
-  overContainer: string;
-  overIndex: number;
-}
-
 // Sortable Item Context
 const SortableItemContext = React.createContext<{
   listeners: DraggableSyntheticListeners | undefined;
