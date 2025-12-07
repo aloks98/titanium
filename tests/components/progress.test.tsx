@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Progress } from '@/base/progress';
+import { Progress } from '@/lib/base/progress';
 import { render, screen } from '../test-utils';
 
 describe('Progress', () => {

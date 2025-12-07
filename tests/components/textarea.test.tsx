@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Textarea } from '@/base/textarea';
+import { Textarea } from '@/lib/base/textarea';
 import { fireEvent, render, screen } from '../test-utils';
 
 describe('Textarea', () => {

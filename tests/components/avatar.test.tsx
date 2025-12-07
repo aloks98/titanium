@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Avatar, AvatarFallback, AvatarImage } from '@/base/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/lib/base/avatar';
 import { render, screen } from '../test-utils';
 
 describe('Avatar Components', () => {

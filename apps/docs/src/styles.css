@@ -1,0 +1,14 @@
+@import "@e412/titanium/styles";
+@import "@e412/titanium/themes/doom.css";
+@import "@e412/titanium/themes/amber.css";
+@import "@e412/titanium/themes/vintage.css";
+@import "@e412/titanium/themes/starry-night.css";
+@import "@e412/titanium/themes/mono.css";
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@source "../node_modules/@e412/titanium";
+
+
+

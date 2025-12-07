@@ -12,7 +12,7 @@ import {
   TypographyMuted,
   TypographyP,
   TypographySmall,
-} from '@/base/typography';
+} from '@/lib/base/typography';
 import { render, screen } from '../test-utils';
 
 describe('TypographyH1', () => {

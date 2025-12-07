@@ -1,7 +1,7 @@
 import { type RenderOptions, render } from '@testing-library/react';
 import type { ReactElement } from 'react';
 import { vi } from 'vitest';
-import { ThemeProvider } from '@/base/theme-provider';
+import { ThemeProvider } from '@/lib/base/theme-provider';
 
 // Custom render function that includes providers
 const customRender = (

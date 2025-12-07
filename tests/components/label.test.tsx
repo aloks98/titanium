@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Label } from '@/base/label';
+import { Label } from '@/lib/base/label';
 import { render, screen } from '../test-utils';
 
 describe('Label', () => {

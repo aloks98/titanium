@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/base/breadcrumb';
+} from '@/lib/base/breadcrumb';
 import { render, screen } from '../test-utils';
 
 describe('Breadcrumb', () => {

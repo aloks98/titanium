@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Alert, AlertDescription, AlertTitle } from '@/base/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/lib/base/alert';
 import { render, screen } from '../test-utils';
 
 describe('Alert', () => {

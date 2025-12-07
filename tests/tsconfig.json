@@ -1,4 +1,7 @@
 {
-  "extends": "../tsconfig.lib.json",
+  "extends": "../packages/titanium-ui/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
   "include": [".", "../vitest.setup.ts"]
 }

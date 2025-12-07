@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Separator } from '@/base/separator';
+import { Separator } from '@/lib/base/separator';
 import { render, screen } from '../test-utils';
 
 describe('Separator', () => {

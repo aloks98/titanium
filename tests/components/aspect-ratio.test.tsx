@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { AspectRatio } from '@/base/aspect-ratio';
+import { AspectRatio } from '@/lib/base/aspect-ratio';
 import { render, screen } from '../test-utils';
 
 describe('AspectRatio', () => {

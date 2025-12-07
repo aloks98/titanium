@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Button } from '@/base/button';
+import { Button } from '@/lib/base/button';
 import { fireEvent, render, screen } from '../test-utils';
 
 describe('Button', () => {

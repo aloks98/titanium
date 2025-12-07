@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/base/card';
+} from '@/lib/base/card';
 import { render, screen } from '../test-utils';
 
 describe('Card Components', () => {

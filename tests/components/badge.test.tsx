@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Badge } from '@/base/badge';
+import { Badge } from '@/lib/base/badge';
 import { render, screen } from '../test-utils';
 
 describe('Badge', () => {

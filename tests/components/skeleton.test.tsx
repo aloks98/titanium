@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Skeleton } from '@/base/skeleton';
+import { Skeleton } from '@/lib/base/skeleton';
 import { render, screen } from '../test-utils';
 
 describe('Skeleton', () => {

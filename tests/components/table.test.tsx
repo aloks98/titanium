@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/base/table';
+} from '@/lib/base/table';
 import { render, screen } from '../test-utils';
 
 describe('Table', () => {
