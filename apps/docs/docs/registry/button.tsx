@@ -1,5 +1,5 @@
 import { Button } from '@e412/titanium';
-import { type ComponentDocumentation } from '../types';
+import type { ComponentDocumentation } from '../types';
 
 export const buttonDocumentation: ComponentDocumentation = {
   id: 'button',

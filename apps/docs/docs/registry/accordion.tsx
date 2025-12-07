@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@e412/titanium';
-import { type ComponentDocumentation } from '../types';
+import type { ComponentDocumentation } from '../types';
 
 export const accordionDocumentation: ComponentDocumentation = {
   id: 'accordion',

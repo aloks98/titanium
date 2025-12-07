@@ -1,6 +1,6 @@
+import { ThemeProvider } from '@e412/titanium';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from '@e412/titanium';
 import App from './App';
 
 const rootEl = document.getElementById('root');

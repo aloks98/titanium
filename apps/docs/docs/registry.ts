@@ -1,10 +1,7 @@
-import {
-  type ComponentDocumentation,
-  type DocumentationCategory,
-} from './types';
 import { accordionDocumentation } from './registry/accordion';
 import { alertDocumentation } from './registry/alert';
 import { buttonDocumentation } from './registry/button';
+import type { ComponentDocumentation, DocumentationCategory } from './types';
 
 // Registry of all component documentation
 export const componentRegistry: Record<string, ComponentDocumentation> = {

@@ -57,7 +57,6 @@ export function ThemeProvider({
         : null) || defaultThemeColorScheme,
   );
 
-
   useEffect(() => {
     const root = window.document.documentElement;
 

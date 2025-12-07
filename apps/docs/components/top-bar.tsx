@@ -1,13 +1,13 @@
-import { Moon, Palette, Sun } from 'lucide-react';
 import {
   Button,
+  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  useTheme,
 } from '@e412/titanium';
-import { useTheme } from '@e412/titanium';
-import { cn } from '@e412/titanium';
+import { Moon, Palette, Sun } from 'lucide-react';
 
 interface TopBarProps {
   className?: string;

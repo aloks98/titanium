@@ -1,5 +1,5 @@
 import { Alert, AlertDescription, AlertTitle } from '@e412/titanium';
-import { type ComponentDocumentation } from '../types';
+import type { ComponentDocumentation } from '../types';
 
 export const alertDocumentation: ComponentDocumentation = {
   id: 'alert',
