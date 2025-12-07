@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { accordionDocumentation } from '../registry/accordion.tsx';
 import { alertDocumentation } from '../registry/alert.tsx';
+import { alertDialogDocumentation } from '../registry/alert-dialog.tsx';
+import { aspectRatioDocumentation } from '../registry/aspect-ratio.tsx';
 import { buttonDocumentation } from '../registry/button.tsx';
 import type {
   ComponentCategory,
@@ -18,6 +20,8 @@ interface DocsRegistry {
 const componentRegistry: Record<string, ComponentDocumentation> = {
   accordion: accordionDocumentation,
   alert: alertDocumentation,
+  'alert-dialog': alertDialogDocumentation,
+  'aspect-ratio': aspectRatioDocumentation,
   button: buttonDocumentation,
 };
 

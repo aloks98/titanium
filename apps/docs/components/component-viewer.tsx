@@ -38,14 +38,14 @@ export function ComponentViewer() {
                 <CopyButton code={documentation.simpleExample.code} />
               </div>
               <TabsContent value="preview" className="mt-4">
-                <Card className="w-full h-96">
+                <Card className="w-full h-[512px]">
                   <CardContent className="p-4 flex items-center justify-center">
                     {documentation.simpleExample.example}
                   </CardContent>
                 </Card>
               </TabsContent>
               <TabsContent value="code" className="mt-4 w-full">
-                <div className="h-96 overflow-y-auto rounded-md">
+                <div className="h-[512px] overflow-y-auto rounded-md">
                   <ShikiHighlighter
                     language={'tsx'}
                     theme={{
@@ -81,14 +81,14 @@ export function ComponentViewer() {
                       <CopyButton code={example.code} />
                     </div>
                     <TabsContent value="preview" className="mt-4">
-                      <Card className="w-full h-96">
+                      <Card className="w-full h-[512px]">
                         <CardContent className="p-4 flex items-center justify-center">
                           {example.example}
                         </CardContent>
                       </Card>
                     </TabsContent>
                     <TabsContent value="code" className="mt-4 w-full">
-                      <div className="h-96 overflow-y-auto rounded-md">
+                      <div className="h-[512px] overflow-y-auto rounded-md">
                         <ShikiHighlighter
                           language={'tsx'}
                           theme={{

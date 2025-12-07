@@ -44,7 +44,7 @@ export const accordionDocumentation: ComponentDocumentation = {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/base/accordion';
+} from '@e412/titanium';
 
 export function AccordionDemo() {
   return (
@@ -76,29 +76,29 @@ export function AccordionDemo() {
   },
   examples: [
     {
-      id: 'outline-variant',
-      title: 'Outline Variant',
-      description: 'Accordion with outline styling and plus indicator.',
+      id: 'solid-variant',
+      title: 'Solid Variant',
+      description: 'Accordion with solid background styling.',
       example: (
         <div className="w-full max-w-md">
           <Accordion
             type="single"
             collapsible
-            variant="outline"
-            indicator="plus"
+            variant="solid"
             className="w-full"
           >
             <AccordionItem value="item-1">
-              <AccordionTrigger>What is React?</AccordionTrigger>
+              <AccordionTrigger>What is a component?</AccordionTrigger>
               <AccordionContent>
-                React is a JavaScript library for building user interfaces.
+                A component is a reusable piece of UI that can be composed to
+                build complex interfaces.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>What is TypeScript?</AccordionTrigger>
+              <AccordionTrigger>What is state?</AccordionTrigger>
               <AccordionContent>
-                TypeScript is a typed superset of JavaScript that compiles to
-                plain JavaScript.
+                State is data that can change over time and affect the
+                component's rendering.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -109,22 +109,22 @@ export function AccordionDemo() {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/base/accordion';
+} from '@e412/titanium';
 
-export function AccordionOutlineDemo() {
+export function AccordionSolidDemo() {
   return (
     <div className="w-full max-w-md">
-      <Accordion type="single" collapsible variant="outline" indicator="plus" className="w-full">
+      <Accordion type="single" collapsible variant="solid" className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger>What is React?</AccordionTrigger>
+          <AccordionTrigger>What is a component?</AccordionTrigger>
           <AccordionContent>
-            React is a JavaScript library for building user interfaces.
+            A component is a reusable piece of UI that can be composed to build complex interfaces.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger>What is TypeScript?</AccordionTrigger>
+          <AccordionTrigger>What is state?</AccordionTrigger>
           <AccordionContent>
-            TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+            State is data that can change over time and affect the component's rendering.
           </AccordionContent>
         </AccordionItem>
       </Accordion>
@@ -132,6 +132,7 @@ export function AccordionOutlineDemo() {
   );
 }`,
     },
+
     {
       id: 'multiple-selection',
       title: 'Multiple Selection',
@@ -171,7 +172,7 @@ export function AccordionOutlineDemo() {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/base/accordion';
+} from '@e412/titanium';
 
 export function AccordionMultipleDemo() {
   return (

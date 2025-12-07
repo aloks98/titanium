@@ -10,7 +10,7 @@ import { createContext, type ReactNode, useContext } from 'react';
 import { cn } from '@/lib/utils';
 
 declare module '@tanstack/react-table' {
-  interface ColumnMeta<TData extends RowData, _TValue> {
+  interface ColumnMeta<TData extends RowData, TValue> {
     headerTitle?: string;
     headerClassName?: string;
     cellClassName?: string;
