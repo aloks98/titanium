@@ -2,6 +2,9 @@ import {Card, CardContent} from '@e412/titanium';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@e412/titanium';
 import {TypographyInlineCode} from '@e412/titanium';
 import {useDocsRegistry} from "../docs/store/useDocsRegistery";
+import ShikiHighlighter from "react-shiki";
+import {Button} from "@e412/titanium";
+import {CopyIcon} from "lucide-react";
 
 export function ComponentViewer() {
     const {selectedDoc: documentation} = useDocsRegistry();
@@ -27,22 +30,29 @@ export function ComponentViewer() {
                                 <TabsTrigger value="code">Code</TabsTrigger>
                             </TabsList>
                             <TabsContent value="preview" className="mt-4">
-                                <Card className="w-full h-80">
-                                    <CardContent className="p-8 flex items-center justify-center">
+                                <Card className="w-full h-96">
+                                    <CardContent className="p-4 flex items-center justify-center">
                                         {documentation.simpleExample.example}
                                     </CardContent>
                                 </Card>
                             </TabsContent>
-                            <TabsContent value="code" className="mt-4">
-                                <Card className="w-full h-80">
-                                    <CardContent className="p-8 flex items-center justify-center overflow-y-auto">
-                    <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
-                      <TypographyInlineCode className="whitespace-pre-wrap">
-                        {documentation.simpleExample.code}
-                      </TypographyInlineCode>
-                    </pre>
-                                    </CardContent>
-                                </Card>
+                            <TabsContent value="code" className="mt-4 w-full">
+                                <div className="h-96 overflow-y-auto rounded-md relative">
+                                    <ShikiHighlighter
+                                        language={"tsx"}
+                                        theme={{
+                                            light: 'vitesse-black',
+                                            dark: 'vitesse-black'
+                                        }}
+                                    >
+                                        {documentation.simpleExample.code.trim()}
+                                    </ShikiHighlighter>
+                                    <Button className={"fixed right-2 top-2"}>
+                                        <CopyIcon/>
+                                        Copy Code
+                                    </Button>
+                                </div>
+
                             </TabsContent>
                         </Tabs>
                     </div>
@@ -65,23 +75,28 @@ export function ComponentViewer() {
                                             <TabsTrigger value="code">Code</TabsTrigger>
                                         </TabsList>
                                         <TabsContent value="preview" className="mt-4">
-                                            <Card className="w-full h-80">
-                                                <CardContent className="p-8 flex items-center justify-center">
+                                            <Card className="w-full h-96">
+                                                <CardContent className="p-4 flex items-center justify-center">
                                                     {example.example}
                                                 </CardContent>
                                             </Card>
                                         </TabsContent>
-                                        <TabsContent value="code" className="mt-4">
-                                            <Card className="w-full h-80">
-                                                <CardContent
-                                                    className="p-8 flex items-center justify-center overflow-y-auto">
-                          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
-                            <TypographyInlineCode className="whitespace-pre-wrap">
-                              {example.code}
-                            </TypographyInlineCode>
-                          </pre>
-                                                </CardContent>
-                                            </Card>
+                                        <TabsContent value="code" className="mt-4 w-full">
+                                            <div className="h-96 overflow-y-auto rounded-md relative">
+                                                <ShikiHighlighter
+                                                    language={"tsx"}
+                                                    theme={{
+                                                        light: 'vitesse-black',
+                                                        dark: 'vitesse-black'
+                                                    }}
+                                                >
+                                                    {example.code.trim()}
+                                                </ShikiHighlighter>
+                                                <Button className={"fixed right-2 top-2"}>
+                                                    <CopyIcon/>
+                                                    Copy Code
+                                                </Button>
+                                            </div>
                                         </TabsContent>
                                     </Tabs>
                                 </div>
@@ -103,7 +118,7 @@ export function ComponentViewer() {
                                 <h3 className="text-xl font-semibold">{api.component}</h3>
                                 <p className="text-muted-foreground">{api.description}</p>
                                 <Card>
-                                    <CardContent className="p-6">
+                                    <CardContent className="p-4">
                                         <div className="space-y-4">
                                             <div className="grid grid-cols-4 gap-4 font-medium text-sm border-b pb-2">
                                                 <div>Prop</div>
