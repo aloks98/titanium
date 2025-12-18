@@ -222,7 +222,7 @@ function StepperItem({
       <div
         data-slot="stepper-item"
         className={cn(
-          'group/step flex items-center justify-center group-data-[orientation=horizontal]/stepper-nav:flex-row group-data-[orientation=vertical]/stepper-nav:flex-col not-last:flex-1',
+          'group/step flex group-data-[orientation=horizontal]/stepper-nav:items-center group-data-[orientation=horizontal]/stepper-nav:justify-center group-data-[orientation=horizontal]/stepper-nav:flex-row group-data-[orientation=vertical]/stepper-nav:items-start group-data-[orientation=vertical]/stepper-nav:flex-col not-last:flex-1',
           className,
         )}
         data-state={state}
@@ -384,7 +384,7 @@ function StepperSeparator({ className }: React.ComponentProps<'div'>) {
       data-slot="stepper-separator"
       data-state={state}
       className={cn(
-        'm-0.5 rounded-full bg-muted group-data-[orientation=vertical]/stepper-nav:h-12 group-data-[orientation=vertical]/stepper-nav:w-0.5 group-data-[orientation=horizontal]/stepper-nav:h-0.5 group-data-[orientation=horizontal]/stepper-nav:flex-1',
+        'm-0.5 rounded-full bg-muted group-data-[orientation=vertical]/stepper-nav:ms-3 group-data-[orientation=vertical]/stepper-nav:h-12 group-data-[orientation=vertical]/stepper-nav:w-0.5 group-data-[orientation=horizontal]/stepper-nav:h-0.5 group-data-[orientation=horizontal]/stepper-nav:flex-1',
         className,
       )}
     />

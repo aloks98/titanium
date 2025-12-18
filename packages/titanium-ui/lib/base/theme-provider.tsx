@@ -6,11 +6,6 @@ import { createContext, useContext, useEffect, useState } from 'react';
 type Theme = 'dark' | 'light' | 'system';
 type ThemeColorScheme =
   | 'default'
-  | 'amber'
-  | 'doom'
-  | 'mono'
-  | 'starry-night'
-  | 'vintage';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -63,11 +58,6 @@ export function ThemeProvider({
     root.classList.remove('light', 'dark');
     root.classList.remove(
       'default',
-      'amber',
-      'doom',
-      'mono',
-      'starry-night',
-      'vintage',
     );
 
     if (theme === 'system') {

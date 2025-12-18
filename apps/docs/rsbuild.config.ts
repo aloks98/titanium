@@ -14,4 +14,8 @@ export default defineConfig({
       '@': '.',
     },
   },
+  html: {
+    title: 'Titanium UI',
+    favicon: './public/favicon.svg',
+  },
 });

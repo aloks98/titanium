@@ -1,18 +1,39 @@
 import {
   Card,
   CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-  TypographyInlineCode,
 } from '@e412/titanium';
 import ShikiHighlighter from 'react-shiki';
 import { useDocsRegistry } from '../docs/store/useDocsRegistery';
 import { CopyButton } from './copy-button';
 
-export function ComponentViewer() {
-  const { selectedDoc: documentation } = useDocsRegistry();
+interface ComponentViewerProps {
+  componentId: string;
+}
+
+export function ComponentViewer({ componentId }: ComponentViewerProps) {
+  const { docs } = useDocsRegistry();
+  const documentation = docs[componentId];
+
+  if (!documentation) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <p className="text-muted-foreground">Component not found</p>
+      </div>
+    );
+  }
   return (
     <div className="flex gap-8 w-full max-w-7xl mx-auto px-6 py-8">
       {/* Main Content */}
@@ -112,54 +133,67 @@ export function ComponentViewer() {
           <h2 className="text-2xl font-semibold">API Reference</h2>
           <div className="space-y-6">
             {documentation.api.map((api) => (
-              <div
+              <Card
                 key={api.component}
                 id={api.component.toLowerCase()}
-                className="space-y-4"
+                className="overflow-hidden"
               >
-                <h3 className="text-xl font-semibold">{api.component}</h3>
-                <p className="text-muted-foreground">{api.description}</p>
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="space-y-4">
-                      <div className="grid grid-cols-4 gap-4 font-medium text-sm border-b pb-2">
-                        <div>Prop</div>
-                        <div>Type</div>
-                        <div>Default</div>
-                        <div>Description</div>
-                      </div>
+                <CardHeader className="bg-muted/50 py-3">
+                  <CardTitle className="text-sm font-semibold">
+                    {api.component}
+                  </CardTitle>
+                  {api.description && (
+                    <CardDescription className="text-xs">
+                      {api.description}
+                    </CardDescription>
+                  )}
+                </CardHeader>
+                <CardContent className="p-0">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="hover:bg-transparent">
+                        <TableHead className="w-[180px]">Prop</TableHead>
+                        <TableHead className="w-[200px]">Type</TableHead>
+                        <TableHead className="w-[120px]">Default</TableHead>
+                        <TableHead>Description</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
                       {api.props.map((prop) => (
-                        <div
-                          key={prop.name}
-                          className="grid grid-cols-4 gap-4 text-sm"
-                        >
-                          <div>
-                            <TypographyInlineCode>
-                              {prop.name}
-                            </TypographyInlineCode>
-                            {prop.required && (
-                              <span className="text-red-500 ml-1">*</span>
-                            )}
-                          </div>
-                          <div>
-                            <TypographyInlineCode>
+                        <TableRow key={prop.name}>
+                          <TableCell>
+                            <div className="flex items-center gap-1">
+                              <code className="text-sm font-mono text-foreground">
+                                {prop.name}
+                              </code>
+                              {prop.required && (
+                                <span className="text-[10px] text-destructive">*</span>
+                              )}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <code className="text-xs font-mono text-muted-foreground">
                               {prop.type}
-                            </TypographyInlineCode>
-                          </div>
-                          <div>
-                            <TypographyInlineCode>
-                              {prop.defaultValue || '-'}
-                            </TypographyInlineCode>
-                          </div>
-                          <div className="text-muted-foreground">
+                            </code>
+                          </TableCell>
+                          <TableCell>
+                            {prop.defaultValue ? (
+                              <code className="text-xs font-mono text-muted-foreground">
+                                {prop.defaultValue}
+                              </code>
+                            ) : (
+                              <span className="text-muted-foreground">-</span>
+                            )}
+                          </TableCell>
+                          <TableCell className="text-muted-foreground">
                             {prop.description || '-'}
-                          </div>
-                        </div>
+                          </TableCell>
+                        </TableRow>
                       ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+                    </TableBody>
+                  </Table>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>

@@ -7,7 +7,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles": "./dist/index.css",
     "./themes/*": "./dist/themes/*"
   },
   "module": "./dist/index.js",

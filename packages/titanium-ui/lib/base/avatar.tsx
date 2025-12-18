@@ -73,10 +73,7 @@ function AvatarIndicator({
   return (
     <div
       data-slot="avatar-indicator"
-      className={cn(
-        'absolute flex size-6 items-center justify-center',
-        className,
-      )}
+      className={cn('absolute flex items-center justify-center', className)}
       {...props}
     />
   );

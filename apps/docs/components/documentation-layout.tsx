@@ -1,21 +1,30 @@
+import { useEffect, useRef } from 'react';
 import { ComponentViewer } from './component-viewer';
 import { DocumentationSidebar } from './documentation-sidebar';
 import { TopBar } from './top-bar';
 
-export function DocumentationLayout() {
-  return (
-    <div className="h-screen flex flex-col bg-background relative">
-      <div className="fixed top-0 left-0 right-0 z-10">
-        <TopBar />
-      </div>
+interface DocumentationLayoutProps {
+  componentId: string;
+}
 
-      <div className="flex h-[calc(100vh-theme(space.16))] mt-16">
-        <div className="w-64 border-r border-border bg-background">
-          <DocumentationSidebar />
+export function DocumentationLayout({ componentId }: DocumentationLayoutProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    contentRef.current?.scrollTo(0, 0);
+  }, [componentId]);
+
+  return (
+    <div className="h-screen w-screen flex flex-col bg-background overflow-hidden">
+      <TopBar />
+
+      <div className="flex flex-1 overflow-hidden">
+        <div className="w-64 shrink-0 border-r border-border overflow-y-auto">
+          <DocumentationSidebar currentComponentId={componentId} />
         </div>
 
-        <div className="flex-1 overflow-y-auto">
-          <ComponentViewer />
+        <div ref={contentRef} className="flex-1 overflow-y-auto">
+          <ComponentViewer componentId={componentId} />
         </div>
       </div>
     </div>

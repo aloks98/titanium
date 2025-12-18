@@ -1,4 +1,4 @@
-import path from 'node:path';
+import * as path from 'node:path';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { defineConfig } from '@rslib/core';
 
@@ -28,11 +28,7 @@ export default defineConfig({
         {
           from: path.resolve(__dirname, './lib/themes'),
           to: path.resolve(__dirname, './dist/themes'),
-        },
-        {
-          from: path.resolve(__dirname, './lib/index.css'),
-          to: path.resolve(__dirname, './dist/index.css'),
-        },
+        }
       ],
     },
   },

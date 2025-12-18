@@ -9,17 +9,17 @@ A modern, themeable React component library built with Tailwind CSS and Radix UI
 - 🎯 **Fully Typed** - Built with TypeScript for excellent developer experience
 - 🧩 **Modular** - Import only what you need
 - 🎪 **Accessible** - Built on Radix UI primitives
-- 🚀 **Modern** - Uses latest React patterns and best practices
-- 📦 **Zero Config** - Works out of the box with any build system
+- 🚀 **Modern** - React 19, Tailwind CSS v4, latest patterns
+- 🎨 **Customizable** - CSS variables with OKLch color space
 
 ## Installation
 
 ```bash
-npm install titanium
+npm install @e412/titanium
 # or
-yarn add titanium
+yarn add @e412/titanium
 # or
-pnpm add titanium
+pnpm add @e412/titanium
 ```
 
 ### Peer Dependencies
@@ -88,61 +88,73 @@ npm install react react-dom @radix-ui/react-* tailwindcss
 
 ## Quick Start
 
-### 1. Import Styles
+### 1. Configure CSS (Tailwind v4)
 
-Import the CSS file in your app's entry point:
+Create or update your `styles.css` with the following:
 
-```js
-// In your main.tsx, App.tsx, or _app.tsx
-import 'titanium/styles'
-// or alternatively
-import 'titanium/dist/styles/globals.css'
+```css
+/* Font imports must come first */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@e412/titanium/themes/default.css";
+@source "../node_modules/@e412/titanium";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: var(--text-sans);
+    --font-serif: var(--text-serif);
+    --font-mono: var(--text-mono);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    /* ... map other color variables as needed */
+}
+
+@layer base {
+    body {
+        @apply bg-background text-foreground font-sans;
+    }
+}
 ```
 
 ### 2. Setup Theme Provider
 
-Wrap your app with the theme provider:
+Wrap your app with the ThemeProvider:
 
 ```jsx
-import { ThemeProvider } from 'titanium'
+import { ThemeProvider, Toaster } from '@e412/titanium'
+import './styles.css'
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system" defaultThemeColorScheme="default">
+    <ThemeProvider defaultTheme="dark" storageKey="my-app-theme">
       <YourApp />
+      <Toaster richColors />
     </ThemeProvider>
   )
 }
 ```
 
-### 3. Configure Tailwind CSS
-
-Add Titanium to your `tailwind.config.js`:
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/titanium/dist/**/*.js" // Add this line
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-### 4. Use Components
+### 3. Use Components
 
 ```jsx
-import { Button, Card, Input } from 'titanium'
+import { Button, Card, CardHeader, CardTitle, CardContent } from '@e412/titanium'
 
 function MyComponent() {
   return (
     <Card>
-      <Input placeholder="Enter something..." />
-      <Button>Click me</Button>
+      <CardHeader>
+        <CardTitle>Welcome</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
     </Card>
   )
 }
@@ -150,39 +162,30 @@ function MyComponent() {
 
 ## Themes
 
-Titanium comes with 6 beautiful built-in themes:
+Titanium provides theme CSS files that you import in your styles:
 
-| Theme | Description |
+| Theme | Import Path |
 |-------|-------------|
-| **Default** | Clean, minimal design with system fonts |
-| **Amber** | Warm amber colors with Inter & Source Serif 4 |
-| **Doom** | Dark, gaming-inspired with Oxanium font |
-| **Mono** | Minimalist monospace design with Geist Mono |
-| **Starry Night** | Elegant night theme with Libre Baskerville |
-| **Vintage** | Classic, timeless design with Libre Baskerville & Lora |
+| **Default** | `@e412/titanium/themes/default.css` |
+| **Amber** | `@e412/titanium/themes/amber.css` |
+| **Doom** | `@e412/titanium/themes/doom.css` |
+| **Mono** | `@e412/titanium/themes/mono.css` |
+| **Starry Night** | `@e412/titanium/themes/starry-night.css` |
+| **Vintage** | `@e412/titanium/themes/vintage.css` |
 
-### Theme Switching
+### Light/Dark Mode Switching
 
 ```jsx
-import { useTheme } from 'titanium'
+import { useTheme } from '@e412/titanium'
 
-function ThemeSelector() {
-  const { setTheme, setThemeColorScheme } = useTheme()
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
 
   return (
     <div>
-      {/* Light/Dark Mode */}
       <button onClick={() => setTheme('light')}>Light</button>
       <button onClick={() => setTheme('dark')}>Dark</button>
       <button onClick={() => setTheme('system')}>System</button>
-
-      {/* Color Schemes */}
-      <button onClick={() => setThemeColorScheme('default')}>Default</button>
-      <button onClick={() => setThemeColorScheme('amber')}>Amber</button>
-      <button onClick={() => setThemeColorScheme('doom')}>Doom</button>
-      <button onClick={() => setThemeColorScheme('mono')}>Mono</button>
-      <button onClick={() => setThemeColorScheme('starry-night')}>Starry Night</button>
-      <button onClick={() => setThemeColorScheme('vintage')}>Vintage</button>
     </div>
   )
 }
@@ -246,39 +249,47 @@ Titanium includes 40+ components built on Radix UI primitives:
 
 ### Custom Themes
 
-You can create custom themes by extending the CSS:
+You can create custom themes by creating a CSS file following the theme structure:
 
 ```css
 .my-theme {
+  --text-sans: "Your Font", sans-serif;
+  --text-serif: Georgia, serif;
+  --text-mono: monospace;
   --background: oklch(0.98 0.002 180);
   --foreground: oklch(0.15 0.02 180);
   --primary: oklch(0.5 0.15 180);
-  /* ... other variables */
-  --font-sans: "Your Font", sans-serif;
+  --primary-foreground: oklch(1 0 0);
+  /* ... other color variables */
+  --radius: 0.5rem;
+}
+
+.my-theme.dark {
+  --background: oklch(0.15 0.02 180);
+  --foreground: oklch(0.98 0.002 180);
+  /* ... dark mode overrides */
 }
 ```
 
 ### CSS Variables
 
-All themes use CSS custom properties that you can override:
+All themes define these CSS custom properties:
 
-```css
-:root {
-  --background: /* background color */;
-  --foreground: /* text color */;
-  --primary: /* primary color */;
-  --secondary: /* secondary color */;
-  --muted: /* muted color */;
-  --accent: /* accent color */;
-  --destructive: /* error color */;
-  --border: /* border color */;
-  --ring: /* focus ring color */;
-  --font-sans: /* sans-serif font stack */;
-  --font-serif: /* serif font stack */;
-  --font-mono: /* monospace font stack */;
-  --radius: /* border radius */;
-}
-```
+| Variable | Description |
+|----------|-------------|
+| `--text-sans` | Sans-serif font stack |
+| `--text-serif` | Serif font stack |
+| `--text-mono` | Monospace font stack |
+| `--background` | Background color |
+| `--foreground` | Text color |
+| `--primary` | Primary accent color |
+| `--secondary` | Secondary color |
+| `--muted` | Muted/subtle color |
+| `--accent` | Accent color |
+| `--destructive` | Error/danger color |
+| `--border` | Border color |
+| `--ring` | Focus ring color |
+| `--radius` | Border radius |
 
 ## Build Integration
 
@@ -318,7 +329,8 @@ Add CSS loader configuration for processing Tailwind imports.
 Titanium is built with TypeScript and includes full type definitions. No additional setup required!
 
 ```tsx
-import type { ButtonProps } from 'titanium'
+import type { ButtonProps } from '@e412/titanium'
+import { Button } from '@e412/titanium'
 
 const MyButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />
