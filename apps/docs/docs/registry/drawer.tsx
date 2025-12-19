@@ -104,19 +104,23 @@ export function DrawerDemo() {
             </DrawerHeader>
             <div className="p-4 space-y-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium">Email</label>
-                <input
-                  type="email"
-                  placeholder="you@example.com"
-                  className="w-full rounded-md border px-3 py-2 text-sm"
-                />
+                <label className="text-sm font-medium">
+                  Email
+                  <input
+                    type="email"
+                    placeholder="you@example.com"
+                    className="w-full rounded-md border px-3 py-2 text-sm mt-1"
+                  />
+                </label>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Message</label>
-                <textarea
-                  placeholder="Your message..."
-                  className="w-full rounded-md border px-3 py-2 text-sm min-h-[100px]"
-                />
+                <label className="text-sm font-medium">
+                  Message
+                  <textarea
+                    placeholder="Your message..."
+                    className="w-full rounded-md border px-3 py-2 text-sm min-h-[100px] mt-1"
+                  />
+                </label>
               </div>
             </div>
             <DrawerFooter>

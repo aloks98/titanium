@@ -240,20 +240,24 @@ export function CardToolbarDemo() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium">Name</label>
-              <input
-                type="text"
-                placeholder="My Project"
-                className="w-full px-3 py-2 border rounded-md text-sm"
-              />
+              <label className="text-sm font-medium">
+                Name
+                <input
+                  type="text"
+                  placeholder="My Project"
+                  className="w-full px-3 py-2 border rounded-md text-sm mt-1"
+                />
+              </label>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Framework</label>
-              <select className="w-full px-3 py-2 border rounded-md text-sm">
-                <option>Next.js</option>
-                <option>React</option>
-                <option>Vue</option>
-              </select>
+              <label className="text-sm font-medium">
+                Framework
+                <select className="w-full px-3 py-2 border rounded-md text-sm mt-1">
+                  <option>Next.js</option>
+                  <option>React</option>
+                  <option>Vue</option>
+                </select>
+              </label>
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">

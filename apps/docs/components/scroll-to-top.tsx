@@ -4,9 +4,10 @@ import { useLocation } from 'react-router-dom';
 export function ScrollToTop() {
   const { pathname } = useLocation();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentionally re-run on pathname change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [pathname]);
 
   return null;
 }

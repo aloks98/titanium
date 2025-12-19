@@ -60,7 +60,7 @@ export const navigationMenuDocumentation: ComponentDocumentation = {
               <ul className="grid gap-3 p-4 w-[400px]">
                 <li>
                   <NavigationMenuLink asChild>
-                    <a href="#">
+                    <a href="/introduction">
                       <div className="font-medium">Introduction</div>
                       <p className="text-sm text-muted-foreground">
                         Re-usable components built with Radix UI and Tailwind
@@ -70,7 +70,7 @@ export const navigationMenuDocumentation: ComponentDocumentation = {
                 </li>
                 <li>
                   <NavigationMenuLink asChild>
-                    <a href="#">
+                    <a href="/installation">
                       <div className="font-medium">Installation</div>
                       <p className="text-sm text-muted-foreground">
                         How to install dependencies and structure your app
@@ -243,7 +243,7 @@ export function NavigationMenuGridDemo() {
                 <ul className="grid gap-3 p-4 w-[300px]">
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="#">
+                      <a href="/analytics">
                         <div className="font-medium">Analytics</div>
                         <p className="text-sm text-muted-foreground">
                           Track and analyze user behavior
@@ -253,7 +253,7 @@ export function NavigationMenuGridDemo() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="#">
+                      <a href="/automation">
                         <div className="font-medium">Automation</div>
                         <p className="text-sm text-muted-foreground">
                           Automate your workflow tasks
@@ -270,7 +270,7 @@ export function NavigationMenuGridDemo() {
                 <ul className="grid gap-3 p-4 w-[300px]">
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="#">
+                      <a href="/docs">
                         <div className="font-medium">Documentation</div>
                         <p className="text-sm text-muted-foreground">
                           Learn how to use our platform
@@ -280,7 +280,7 @@ export function NavigationMenuGridDemo() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="#">
+                      <a href="/blog">
                         <div className="font-medium">Blog</div>
                         <p className="text-sm text-muted-foreground">
                           Read our latest articles
@@ -380,7 +380,7 @@ export function NavigationMenuMultipleDemo() {
                 <ul className="grid gap-3 p-4 w-[250px]">
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="#">
+                      <a href="/profile">
                         <div className="font-medium">Profile</div>
                         <p className="text-sm text-muted-foreground">
                           View your profile
@@ -390,7 +390,7 @@ export function NavigationMenuMultipleDemo() {
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="#">
+                      <a href="/settings">
                         <div className="font-medium">Settings</div>
                         <p className="text-sm text-muted-foreground">
                           Manage preferences
