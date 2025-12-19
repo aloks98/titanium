@@ -1,4 +1,3 @@
-import { BookOpen } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDocsRegistry } from '../docs/store/useDocsRegistery';
 import { type ComponentCategory, categoryNames } from '../docs/types';
@@ -32,7 +31,6 @@ export function DocumentationSidebar({
               : 'text-foreground hover:bg-accent hover:text-accent-foreground'
           }`}
         >
-          <BookOpen className="h-4 w-4" />
           Installation
         </button>
       </div>

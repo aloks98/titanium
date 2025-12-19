@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  closestCenter,
   DndContext,
   type DragEndEvent,
   type DraggableSyntheticListeners,
@@ -129,9 +130,36 @@ function Sortable<T>({
     [value, getItemValue],
   );
 
+  // Find the SortableItem child that matches the active ID (recursive search)
+  const findActiveChild = React.useCallback(
+    (children: React.ReactNode): React.ReactElement | null => {
+      let result: React.ReactElement | null = null;
+
+      React.Children.forEach(children, (child) => {
+        if (result) return;
+
+        if (React.isValidElement(child)) {
+          const childProps = child.props as {
+            value?: string;
+            children?: React.ReactNode;
+          };
+          if (childProps.value === activeId) {
+            result = child;
+          } else if (childProps.children) {
+            result = findActiveChild(childProps.children);
+          }
+        }
+      });
+
+      return result;
+    },
+    [activeId],
+  );
+
   return (
     <DndContext
       sensors={sensors}
+      collisionDetection={closestCenter}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
@@ -146,25 +174,25 @@ function Sortable<T>({
       </SortableContext>
 
       <DragOverlay>
-        {activeId ? (
-          <div className="z-50">
-            {React.Children.map(children, (child) => {
-              if (
-                React.isValidElement(child) &&
-                (child.props as any).value === activeId
-              ) {
-                return React.cloneElement(child as React.ReactElement<any>, {
-                  ...(child.props as any),
-                  className: cn(
-                    (child.props as any).className,
-                    'z-50 shadow-lg',
-                  ),
-                });
+        {activeId
+          ? (() => {
+              const activeChild = findActiveChild(children);
+              if (activeChild) {
+                const childProps = activeChild.props as {
+                  className?: string;
+                  [key: string]: unknown;
+                };
+                return React.cloneElement(
+                  activeChild as React.ReactElement<{ className?: string }>,
+                  {
+                    ...childProps,
+                    className: cn(childProps.className, 'z-50 shadow-lg'),
+                  },
+                );
               }
               return null;
-            })}
-          </div>
-        ) : null}
+            })()
+          : null}
       </DragOverlay>
     </DndContext>
   );

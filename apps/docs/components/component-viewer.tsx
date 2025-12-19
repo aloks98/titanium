@@ -70,9 +70,10 @@ export function ComponentViewer({ componentId }: ComponentViewerProps) {
                   <ShikiHighlighter
                     language={'tsx'}
                     theme={{
-                      light: 'vitesse-black',
-                      dark: 'vitesse-black',
+                      light: 'catppuccin-latte',
+                      dark: 'tokyo-night',
                     }}
+                    cssVariablePrefix="--shiki-"
                   >
                     {documentation.simpleExample.code.trim()}
                   </ShikiHighlighter>
@@ -113,9 +114,10 @@ export function ComponentViewer({ componentId }: ComponentViewerProps) {
                         <ShikiHighlighter
                           language={'tsx'}
                           theme={{
-                            light: 'vitesse-black',
-                            dark: 'vitesse-black',
+                            light: 'catppuccin-latte',
+                            dark: 'tokyo-night',
                           }}
+                          cssVariablePrefix="--shiki-"
                         >
                           {example.code.trim()}
                         </ShikiHighlighter>

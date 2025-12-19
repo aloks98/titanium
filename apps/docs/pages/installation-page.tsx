@@ -371,6 +371,7 @@ function CodeBlock({
             light: 'catppuccin-latte',
             dark: 'tokyo-night',
           }}
+          cssVariablePrefix="--shiki-"
         >
           {code.trim()}
         </ShikiHighlighter>

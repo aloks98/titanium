@@ -35,7 +35,7 @@ const SortableDemo = () => {
         {tasks.map((task) => (
           <SortableItem key={task.id} value={task.id}>
             <Card>
-              <CardHeader className="flex flex-row items-center gap-3 p-3">
+              <CardHeader className="flex flex-row items-center gap-3 p-3 border-0">
                 <SortableItemHandle>
                   <GripVertical className="size-4 text-muted-foreground" />
                 </SortableItemHandle>
@@ -98,7 +98,7 @@ export function SortableDemo() {
         {tasks.map((task) => (
           <SortableItem key={task.id} value={task.id}>
             <Card>
-              <CardHeader className="flex flex-row items-center gap-3 p-3">
+              <CardHeader className="flex flex-row items-center gap-3 p-3 border-0">
                 <SortableItemHandle>
                   <GripVertical className="size-4 text-muted-foreground" />
                 </SortableItemHandle>
