@@ -18,10 +18,15 @@
     "dev:docs": "pnpm -C apps/docs dev",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx,json,css}": "biome check --write",
+    "packages/**/*.{js,ts,jsx,tsx,json,css}": "biome check --write"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.3.5",
     "concurrently": "^9.2.1",
     "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "typescript": "^5.8.2",
     "vitest": "^3.0.9"
   },
