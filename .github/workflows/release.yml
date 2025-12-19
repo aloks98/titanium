@@ -99,13 +99,51 @@ jobs:
           git push origin "v$VERSION"
           echo "✅ Created and pushed tag v$VERSION"
 
-  build-and-publish:
-    name: Build and Publish to NPM
+  build:
+    name: Build
     needs: [validate, version-and-tag]
     if: always() && needs.validate.result == 'success' && (needs.version-and-tag.result == 'success' || needs.version-and-tag.result == 'skipped')
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: v${{ github.event.inputs.version }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run lint
+        run: pnpm check
+
+      - name: Build all
+        run: pnpm build
+
+      - name: Upload lib artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lib-dist
+          path: packages/titanium-ui/dist
+
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-dist
+          path: apps/docs/dist
+
+  publish-npm:
+    name: Publish to NPM
+    needs: build
+    runs-on: ubuntu-latest
     permissions:
-      contents: write
       id-token: write
     steps:
       - name: Checkout code
@@ -122,26 +160,20 @@ jobs:
           node-version: 'latest'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Run lint
-        run: pnpm check
-
-      - name: Build library
-        run: pnpm build:lib
+      - name: Download lib artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: lib-dist
+          path: packages/titanium-ui/dist
 
       - name: Publish to NPM
         run: |
           cd packages/titanium-ui
           pnpm publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  deploy-docs:
-    name: Deploy Docs to Cloudflare
-    needs: [validate, version-and-tag]
-    if: always() && needs.validate.result == 'success' && (needs.version-and-tag.result == 'success' || needs.version-and-tag.result == 'skipped')
+  deploy-cloudflare:
+    name: Deploy to Cloudflare
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -160,8 +192,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build docs
-        run: pnpm build:docs
+      - name: Download docs artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs-dist
+          path: apps/docs/dist
 
       - name: Deploy to Cloudflare Pages
         run: pnpm wrangler pages deploy apps/docs/dist --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
@@ -171,8 +206,8 @@ jobs:
 
   create-release:
     name: Create GitHub Release
-    needs: [validate, version-and-tag, build-and-publish, deploy-docs]
-    if: always() && needs.build-and-publish.result == 'success' && needs.deploy-docs.result == 'success'
+    needs: [publish-npm, deploy-cloudflare]
+    if: always() && needs.publish-npm.result == 'success' && needs.deploy-cloudflare.result == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write
