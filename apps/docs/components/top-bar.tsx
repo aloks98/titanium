@@ -8,8 +8,8 @@ import {
   Kbd,
   useTheme,
 } from '@e412/titanium';
-import { Moon, Search, Sun } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Github, Moon, Search, Sun } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCommandStore } from '../stores/useCommandStore';
 
 interface TopBarProps {
@@ -46,6 +46,16 @@ export function TopBar({ className }: TopBarProps) {
           <span>Search components...</span>
         </div>
         <Kbd keys={['command']}>K</Kbd>
+      </Button>
+      <Button variant="outline" size="icon" asChild>
+        <Link
+          to="https://github.com/aloks98/titanium"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github className="h-[1.2rem] w-[1.2rem]" />
+          <span className="sr-only">GitHub</span>
+        </Link>
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

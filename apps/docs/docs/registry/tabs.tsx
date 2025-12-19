@@ -9,8 +9,8 @@ export const tabsDocumentation: ComponentDocumentation = {
   category: 'navigation',
   simpleExample: {
     example: (
-      <Tabs defaultValue="account" className="w-full max-w-md">
-        <TabsList>
+      <Tabs defaultValue="account" className="w-[400px]">
+        <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="account">Account</TabsTrigger>
           <TabsTrigger value="password">Password</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
@@ -36,8 +36,8 @@ export const tabsDocumentation: ComponentDocumentation = {
 
 export function TabsDemo() {
   return (
-    <Tabs defaultValue="account" className="w-full max-w-md">
-      <TabsList>
+    <Tabs defaultValue="account" className="w-[400px]">
+      <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
       </TabsList>
@@ -57,9 +57,9 @@ export function TabsDemo() {
       title: 'Variants',
       description: 'Different tab list variants.',
       example: (
-        <div className="space-y-6">
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList variant="default">
+        <div className="w-[400px] space-y-6">
+          <Tabs defaultValue="tab1">
+            <TabsList variant="default" className="grid w-full grid-cols-3">
               <TabsTrigger value="tab1">Default</TabsTrigger>
               <TabsTrigger value="tab2">Variant</TabsTrigger>
               <TabsTrigger value="tab3">Style</TabsTrigger>
@@ -68,8 +68,8 @@ export function TabsDemo() {
             <TabsContent value="tab2">Tab 2 content</TabsContent>
             <TabsContent value="tab3">Tab 3 content</TabsContent>
           </Tabs>
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList variant="button">
+          <Tabs defaultValue="tab1">
+            <TabsList variant="button" className="grid w-full grid-cols-3">
               <TabsTrigger value="tab1">Button</TabsTrigger>
               <TabsTrigger value="tab2">Variant</TabsTrigger>
               <TabsTrigger value="tab3">Style</TabsTrigger>
@@ -78,8 +78,8 @@ export function TabsDemo() {
             <TabsContent value="tab2">Tab 2 content</TabsContent>
             <TabsContent value="tab3">Tab 3 content</TabsContent>
           </Tabs>
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList variant="line">
+          <Tabs defaultValue="tab1">
+            <TabsList variant="line" className="grid w-full grid-cols-3">
               <TabsTrigger value="tab1">Line</TabsTrigger>
               <TabsTrigger value="tab2">Variant</TabsTrigger>
               <TabsTrigger value="tab3">Style</TabsTrigger>
@@ -122,27 +122,27 @@ export function TabsVariantsDemo() {
       title: 'Sizes',
       description: 'Tabs in different sizes.',
       example: (
-        <div className="space-y-6">
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList size="xs">
+        <div className="w-[400px] space-y-6">
+          <Tabs defaultValue="tab1">
+            <TabsList size="xs" className="grid w-full grid-cols-2">
               <TabsTrigger value="tab1">Extra Small</TabsTrigger>
               <TabsTrigger value="tab2">Size</TabsTrigger>
             </TabsList>
           </Tabs>
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList size="sm">
+          <Tabs defaultValue="tab1">
+            <TabsList size="sm" className="grid w-full grid-cols-2">
               <TabsTrigger value="tab1">Small</TabsTrigger>
               <TabsTrigger value="tab2">Size</TabsTrigger>
             </TabsList>
           </Tabs>
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList size="md">
+          <Tabs defaultValue="tab1">
+            <TabsList size="md" className="grid w-full grid-cols-2">
               <TabsTrigger value="tab1">Medium</TabsTrigger>
               <TabsTrigger value="tab2">Default</TabsTrigger>
             </TabsList>
           </Tabs>
-          <Tabs defaultValue="tab1" className="w-full max-w-md">
-            <TabsList size="lg">
+          <Tabs defaultValue="tab1">
+            <TabsList size="lg" className="grid w-full grid-cols-2">
               <TabsTrigger value="tab1">Large</TabsTrigger>
               <TabsTrigger value="tab2">Size</TabsTrigger>
             </TabsList>
@@ -175,8 +175,8 @@ export function TabsSizesDemo() {
       title: 'Pill Shape',
       description: 'Tabs with pill-shaped styling.',
       example: (
-        <Tabs defaultValue="tab1" className="w-full max-w-md">
-          <TabsList shape="pill">
+        <Tabs defaultValue="tab1" className="w-[400px]">
+          <TabsList shape="pill" className="grid w-full grid-cols-3">
             <TabsTrigger value="tab1">Overview</TabsTrigger>
             <TabsTrigger value="tab2">Analytics</TabsTrigger>
             <TabsTrigger value="tab3">Reports</TabsTrigger>
@@ -205,8 +205,8 @@ export function TabsPillDemo() {
       title: 'Disabled Tab',
       description: 'Tabs with a disabled trigger.',
       example: (
-        <Tabs defaultValue="tab1" className="w-full max-w-md">
-          <TabsList>
+        <Tabs defaultValue="tab1" className="w-[400px]">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="tab1">Active</TabsTrigger>
             <TabsTrigger value="tab2" disabled>
               Disabled
