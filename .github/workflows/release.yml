@@ -1,29 +1,53 @@
-name: Release & Deploy
+name: Release
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to release (e.g., 1.2.3)'
+        description: 'Release version (e.g., 1.2.3)'
         required: true
+        type: string
+      release_title:
+        description: 'Release title (optional, defaults to "Release vX.Y.Z")'
+        required: false
         type: string
 
 jobs:
-  release:
+  update-version-and-tag:
+    name: Update Version and Create Tag
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.repository.default_branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
+      - name: Validate version format
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "❌ Error: Version must be in semver format (X.Y.Z)"
+            echo "Example: 1.2.3"
+            exit 1
+          fi
+          echo "✅ Valid version: $VERSION"
+
+      - name: Check if tag already exists
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          if git rev-parse "v$VERSION" >/dev/null 2>&1; then
+            echo "❌ Error: Tag v$VERSION already exists"
+            exit 1
+          fi
+          echo "✅ Tag v$VERSION does not exist"
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -31,66 +55,38 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 'latest'
           cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
 
-      - name: Extract version from tag
-        id: version
+      - name: Update version files
         run: |
-          if [ "${{ github.event_name }}" = "release" ]; then
-            VERSION="${{ github.event.release.tag_name }}"
-            VERSION="${VERSION#v}"
-          else
-            VERSION="${{ inputs.version }}"
-          fi
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "📦 Release version: $VERSION"
+          VERSION="${{ github.event.inputs.version }}"
+          node scripts/update-version.js "$VERSION"
 
-      - name: Update package versions
+      - name: Commit version changes
         run: |
-          node scripts/update-version.js ${{ steps.version.outputs.version }}
-
-      - name: Commit version updates
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          VERSION="${{ github.event.inputs.version }}"
           git add package.json packages/*/package.json apps/*/package.json
-          if git diff --staged --quiet; then
-            echo "No version changes to commit"
+          git commit -m "chore: bump version to $VERSION [skip ci]"
+          git push origin ${{ github.event.repository.default_branch }}
+          echo "✅ Version bumped and pushed"
+
+      - name: Create and push tag
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          RELEASE_TITLE="${{ github.event.inputs.release_title }}"
+
+          if [ -n "$RELEASE_TITLE" ]; then
+            TAG_MESSAGE="CUSTOM_TITLE: $RELEASE_TITLE"
+            git tag -a "v$VERSION" -m "$TAG_MESSAGE"
           else
-            git commit -m "chore: bump version to ${{ steps.version.outputs.version }} [skip ci]"
-            git push origin ${{ github.event.repository.default_branch }}
-            echo "✅ Version bumped and pushed to ${{ github.event.repository.default_branch }}"
+            git tag -a "v$VERSION" -m "Release v$VERSION"
           fi
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          git push origin "v$VERSION"
+          echo "✅ Created and pushed tag v$VERSION"
 
-      - name: Build library
-        run: pnpm build:lib
-
-      - name: Publish to NPM
+      - name: Done
         run: |
-          cd packages/titanium-ui
-          pnpm publish --access public --no-git-checks
-
-      - name: Build docs
-        run: pnpm build:docs
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy apps/docs/dist --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-
-      - name: Release summary
-        run: |
-          echo "## 🚀 Release Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Version**: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **NPM Package**: [@e412/titanium](https://www.npmjs.com/package/@e412/titanium)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Docs**: Deployed to Cloudflare Pages" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ All tasks completed successfully!" >> $GITHUB_STEP_SUMMARY
+          VERSION="${{ github.event.inputs.version }}"
+          echo "🚀 Tag v$VERSION pushed - publish workflow will be triggered automatically"
