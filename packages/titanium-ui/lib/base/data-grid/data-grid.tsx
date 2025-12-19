@@ -10,7 +10,8 @@ import { createContext, type ReactNode, useContext } from 'react';
 import { cn } from '@/lib/utils';
 
 declare module '@tanstack/react-table' {
-  interface ColumnMeta<TData extends RowData, _TValue> {
+  // biome-ignore lint/correctness/noUnusedVariables: TValue must match TanStack Table's type parameters
+  interface ColumnMeta<TData extends RowData, TValue> {
     headerTitle?: string;
     headerClassName?: string;
     cellClassName?: string;
