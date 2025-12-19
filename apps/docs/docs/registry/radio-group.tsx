@@ -1,4 +1,4 @@
-import { RadioGroup, RadioGroupItem, Label } from '@e412/titanium';
+import { Label, RadioGroup, RadioGroupItem } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const radioGroupDocumentation: ComponentDocumentation = {
@@ -62,7 +62,9 @@ export function RadioGroupDemo() {
             </RadioGroup>
           </div>
           <div>
-            <Label className="mb-2 block text-muted-foreground">Medium (default)</Label>
+            <Label className="mb-2 block text-muted-foreground">
+              Medium (default)
+            </Label>
             <RadioGroup defaultValue="md-1" size="md">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="md-1" id="md-1" />

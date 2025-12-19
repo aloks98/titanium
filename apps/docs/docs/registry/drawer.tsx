@@ -1,4 +1,5 @@
 import {
+  Button,
   Drawer,
   DrawerClose,
   DrawerContent,
@@ -7,7 +8,6 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-  Button,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 

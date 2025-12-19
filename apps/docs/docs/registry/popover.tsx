@@ -1,10 +1,10 @@
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   Button,
   Input,
   Label,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
 } from '@e412/titanium';
 import { Settings } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
@@ -12,8 +12,7 @@ import type { ComponentDocumentation } from '../types';
 export const popoverDocumentation: ComponentDocumentation = {
   id: 'popover',
   name: 'Popover',
-  description:
-    'Displays rich content in a portal, triggered by a button.',
+  description: 'Displays rich content in a portal, triggered by a button.',
   category: 'overlay',
   simpleExample: {
     example: (

@@ -1,16 +1,16 @@
 import {
+  Badge,
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
   Kanban,
   KanbanBoard,
   KanbanColumn,
+  KanbanColumnContent,
   KanbanColumnHandle,
   KanbanItem,
   KanbanItemHandle,
-  KanbanColumnContent,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  Badge,
 } from '@e412/titanium';
 import { GripVertical, MoreHorizontal } from 'lucide-react';
 import { useState } from 'react';
@@ -25,14 +25,34 @@ interface Task {
 
 const initialColumns: Record<string, Task[]> = {
   todo: [
-    { id: '1', title: 'Research', description: 'Research new technologies', priority: 'high' },
-    { id: '2', title: 'Design', description: 'Create wireframes', priority: 'medium' },
+    {
+      id: '1',
+      title: 'Research',
+      description: 'Research new technologies',
+      priority: 'high',
+    },
+    {
+      id: '2',
+      title: 'Design',
+      description: 'Create wireframes',
+      priority: 'medium',
+    },
   ],
   'in-progress': [
-    { id: '3', title: 'Development', description: 'Build the feature', priority: 'high' },
+    {
+      id: '3',
+      title: 'Development',
+      description: 'Build the feature',
+      priority: 'high',
+    },
   ],
   done: [
-    { id: '4', title: 'Testing', description: 'Write unit tests', priority: 'low' },
+    {
+      id: '4',
+      title: 'Testing',
+      description: 'Write unit tests',
+      priority: 'low',
+    },
   ],
 };
 
@@ -60,7 +80,9 @@ const KanbanDemo = () => {
                   <KanbanColumnHandle>
                     <GripVertical className="size-4 text-muted-foreground" />
                   </KanbanColumnHandle>
-                  <h3 className="text-sm font-semibold">{columnLabels[columnId]}</h3>
+                  <h3 className="text-sm font-semibold">
+                    {columnLabels[columnId]}
+                  </h3>
                   <Badge variant="secondary" className="text-xs">
                     {columns[columnId].length}
                   </Badge>
@@ -77,7 +99,9 @@ const KanbanDemo = () => {
                             <GripVertical className="size-4 text-muted-foreground mt-0.5" />
                           </KanbanItemHandle>
                           <div className="flex-1 space-y-1">
-                            <CardTitle className="text-sm">{task.title}</CardTitle>
+                            <CardTitle className="text-sm">
+                              {task.title}
+                            </CardTitle>
                             <CardDescription className="text-xs">
                               {task.description}
                             </CardDescription>
@@ -111,8 +135,7 @@ const KanbanDemo = () => {
 export const kanbanDocumentation: ComponentDocumentation = {
   id: 'kanban',
   name: 'Kanban',
-  description:
-    'A drag-and-drop kanban board component built on @dnd-kit.',
+  description: 'A drag-and-drop kanban board component built on @dnd-kit.',
   category: 'data-display',
   simpleExample: {
     example: <KanbanDemo />,
@@ -211,7 +234,9 @@ export function KanbanDemo() {
       description: 'A simple kanban board with minimal styling.',
       example: (() => {
         const MinimalDemo = () => {
-          const [columns, setColumns] = useState<Record<string, { id: string; text: string }[]>>({
+          const [columns, setColumns] = useState<
+            Record<string, { id: string; text: string }[]>
+          >({
             backlog: [
               { id: 'a', text: 'Task A' },
               { id: 'b', text: 'Task B' },

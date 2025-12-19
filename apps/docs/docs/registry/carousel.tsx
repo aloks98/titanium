@@ -1,11 +1,11 @@
 import {
+  Card,
+  CardContent,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  Card,
-  CardContent,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 

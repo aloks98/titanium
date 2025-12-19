@@ -167,7 +167,9 @@ export function ComponentViewer({ componentId }: ComponentViewerProps) {
                                 {prop.name}
                               </code>
                               {prop.required && (
-                                <span className="text-[10px] text-destructive">*</span>
+                                <span className="text-[10px] text-destructive">
+                                  *
+                                </span>
                               )}
                             </div>
                           </TableCell>

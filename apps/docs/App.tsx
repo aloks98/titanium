@@ -1,12 +1,12 @@
 import './src/styles.css';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { HomePage } from './pages/home-page';
-import { ComponentsPage } from './pages/components-page';
-import { ComponentDetailPage } from './pages/component-detail-page';
-import { InstallationPage } from './pages/installation-page';
+import { Toaster } from '@e412/titanium';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { CommandSearch } from './components/command-search';
 import { ScrollToTop } from './components/scroll-to-top';
-import { Toaster } from '@e412/titanium';
+import { ComponentDetailPage } from './pages/component-detail-page';
+import { ComponentsPage } from './pages/components-page';
+import { HomePage } from './pages/home-page';
+import { InstallationPage } from './pages/installation-page';
 
 const App = () => {
   return (

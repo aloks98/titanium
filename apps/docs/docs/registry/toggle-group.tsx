@@ -1,22 +1,21 @@
 import { ToggleGroup, ToggleGroupItem } from '@e412/titanium';
 import {
-  AlignLeft,
   AlignCenter,
-  AlignRight,
   AlignJustify,
+  AlignLeft,
+  AlignRight,
   Bold,
   Italic,
-  Underline,
   List,
   ListOrdered,
+  Underline,
 } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
 
 export const toggleGroupDocumentation: ComponentDocumentation = {
   id: 'toggle-group',
   name: 'Toggle Group',
-  description:
-    'A set of two-state buttons that can be toggled on or off.',
+  description: 'A set of two-state buttons that can be toggled on or off.',
   category: 'form',
   simpleExample: {
     example: (

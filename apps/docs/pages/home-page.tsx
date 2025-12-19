@@ -17,7 +17,11 @@ export function HomePage() {
           <Button size="lg" onClick={() => navigate('/installation')}>
             Get Started
           </Button>
-          <Button size="lg" variant="outline" onClick={() => navigate('/components')}>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => navigate('/components')}
+          >
             View Components
           </Button>
         </div>

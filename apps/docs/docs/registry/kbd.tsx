@@ -12,7 +12,9 @@ export const kbdDocumentation: ComponentDocumentation = {
       <div className="flex items-center gap-4">
         <Kbd>⌘</Kbd>
         <Kbd>K</Kbd>
-        <span className="text-sm text-muted-foreground">to open command palette</span>
+        <span className="text-sm text-muted-foreground">
+          to open command palette
+        </span>
       </div>
     ),
     code: `import { Kbd } from '@e412/titanium';
@@ -143,7 +145,9 @@ export function KbdGroupDemo() {
               <Kbd>⇧</Kbd>
               <Kbd>P</Kbd>
             </KbdGroup>
-            <span className="text-sm text-muted-foreground">Command Palette</span>
+            <span className="text-sm text-muted-foreground">
+              Command Palette
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <KbdGroup>

@@ -6,21 +6,14 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
+  SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-  SidebarInset,
 } from '@e412/titanium';
-import {
-  Calendar,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-  User,
-} from 'lucide-react';
+import { Calendar, Home, Inbox, Search, Settings, User } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
 
 const menuItems = [

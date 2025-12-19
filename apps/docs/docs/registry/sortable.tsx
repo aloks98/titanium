@@ -1,11 +1,11 @@
 import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
   Sortable,
   SortableItem,
   SortableItemHandle,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
 } from '@e412/titanium';
 import { GripVertical } from 'lucide-react';
 import { useState } from 'react';
@@ -57,8 +57,7 @@ const SortableDemo = () => {
 export const sortableDocumentation: ComponentDocumentation = {
   id: 'sortable',
   name: 'Sortable',
-  description:
-    'A drag-and-drop sortable list component built on @dnd-kit.',
+  description: 'A drag-and-drop sortable list component built on @dnd-kit.',
   category: 'data-display',
   simpleExample: {
     example: <SortableDemo />,

@@ -1,10 +1,10 @@
 import {
+  Button,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  Button,
 } from '@e412/titanium';
-import { Plus, Info, Settings } from 'lucide-react';
+import { Info, Plus, Settings } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
 
 export const tooltipDocumentation: ComponentDocumentation = {

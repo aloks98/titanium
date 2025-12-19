@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
@@ -7,7 +8,6 @@ import {
   CardHeading,
   CardTitle,
   CardToolbar,
-  Button,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 

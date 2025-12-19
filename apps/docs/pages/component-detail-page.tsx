@@ -1,4 +1,4 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { DocumentationLayout } from '../components/documentation-layout';
 import { useDocsRegistry } from '../docs/store/useDocsRegistery';
 

@@ -1,17 +1,17 @@
 import {
   ContextMenu,
+  ContextMenuCheckboxItem,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuLabel,
-  ContextMenuSeparator,
-  ContextMenuTrigger,
-  ContextMenuCheckboxItem,
   ContextMenuRadioGroup,
   ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-  ContextMenuShortcut,
+  ContextMenuTrigger,
 } from '@e412/titanium';
 import { useState } from 'react';
 import type { ComponentDocumentation } from '../types';
@@ -56,7 +56,9 @@ function ContextMenuRadioExample() {
         <ContextMenuLabel>People</ContextMenuLabel>
         <ContextMenuSeparator />
         <ContextMenuRadioGroup value={person} onValueChange={setPerson}>
-          <ContextMenuRadioItem value="pedro">Pedro Duarte</ContextMenuRadioItem>
+          <ContextMenuRadioItem value="pedro">
+            Pedro Duarte
+          </ContextMenuRadioItem>
           <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
           <ContextMenuRadioItem value="john">John Doe</ContextMenuRadioItem>
         </ContextMenuRadioGroup>

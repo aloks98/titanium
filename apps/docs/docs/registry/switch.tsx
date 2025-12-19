@@ -1,4 +1,4 @@
-import { Switch, SwitchWrapper, SwitchIndicator, Label } from '@e412/titanium';
+import { Label, Switch, SwitchIndicator, SwitchWrapper } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const switchDocumentation: ComponentDocumentation = {

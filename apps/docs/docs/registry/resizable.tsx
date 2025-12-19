@@ -1,7 +1,7 @@
 import {
-  ResizablePanelGroup,
-  ResizablePanel,
   ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 

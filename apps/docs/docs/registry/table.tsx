@@ -11,18 +11,32 @@ import {
 import type { ComponentDocumentation } from '../types';
 
 const invoices = [
-  { invoice: 'INV001', status: 'Paid', method: 'Credit Card', amount: '$250.00' },
+  {
+    invoice: 'INV001',
+    status: 'Paid',
+    method: 'Credit Card',
+    amount: '$250.00',
+  },
   { invoice: 'INV002', status: 'Pending', method: 'PayPal', amount: '$150.00' },
-  { invoice: 'INV003', status: 'Unpaid', method: 'Bank Transfer', amount: '$350.00' },
-  { invoice: 'INV004', status: 'Paid', method: 'Credit Card', amount: '$450.00' },
+  {
+    invoice: 'INV003',
+    status: 'Unpaid',
+    method: 'Bank Transfer',
+    amount: '$350.00',
+  },
+  {
+    invoice: 'INV004',
+    status: 'Paid',
+    method: 'Credit Card',
+    amount: '$450.00',
+  },
   { invoice: 'INV005', status: 'Paid', method: 'PayPal', amount: '$550.00' },
 ];
 
 export const tableDocumentation: ComponentDocumentation = {
   id: 'table',
   name: 'Table',
-  description:
-    'A responsive table component for displaying tabular data.',
+  description: 'A responsive table component for displaying tabular data.',
   category: 'data-display',
   simpleExample: {
     example: (

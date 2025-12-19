@@ -1,4 +1,4 @@
-import { Toaster, Button } from '@e412/titanium';
+import { Button } from '@e412/titanium';
 import { toast } from 'sonner';
 import type { ComponentDocumentation } from '../types';
 
@@ -56,7 +56,9 @@ export function SonnerDemo() {
           </Button>
           <Button
             variant="outline"
-            onClick={() => toast.success('Success! Your changes have been saved.')}
+            onClick={() =>
+              toast.success('Success! Your changes have been saved.')
+            }
           >
             Success
           </Button>
@@ -74,7 +76,9 @@ export function SonnerDemo() {
           </Button>
           <Button
             variant="outline"
-            onClick={() => toast.warning('Warning: This action cannot be undone.')}
+            onClick={() =>
+              toast.warning('Warning: This action cannot be undone.')
+            }
           >
             Warning
           </Button>

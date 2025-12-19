@@ -1,14 +1,13 @@
 import {
   Stepper,
-  StepperItem,
-  StepperTrigger,
+  StepperContent,
+  StepperDescription,
   StepperIndicator,
+  StepperItem,
+  StepperNav,
   StepperSeparator,
   StepperTitle,
-  StepperDescription,
-  StepperNav,
-  StepperContent,
-  Button,
+  StepperTrigger,
 } from '@e412/titanium';
 import { Check, Loader2 } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
@@ -230,7 +229,8 @@ export function StepperWithContentDemo() {
     {
       id: 'with-indicators',
       title: 'Custom Indicators',
-      description: 'Stepper with custom indicators for completed and active states.',
+      description:
+        'Stepper with custom indicators for completed and active states.',
       example: (
         <Stepper
           defaultValue={2}

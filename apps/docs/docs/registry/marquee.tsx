@@ -1,4 +1,4 @@
-import { Marquee, Avatar, AvatarImage, AvatarFallback } from '@e412/titanium';
+import { Avatar, AvatarFallback, Marquee } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 const reviews = [
@@ -19,20 +19,20 @@ export const marqueeDocumentation: ComponentDocumentation = {
     example: (
       <div className="w-full max-w-md overflow-hidden">
         <Marquee className="py-4">
-        {reviews.map((review) => (
-          <div
-            key={review.name}
-            className="flex items-center gap-3 rounded-lg border bg-background px-4 py-3 shadow-sm"
-          >
-            <Avatar className="size-8">
-              <AvatarFallback>{review.name[0]}</AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="text-sm font-medium">{review.name}</p>
-              <p className="text-xs text-muted-foreground">{review.text}</p>
+          {reviews.map((review) => (
+            <div
+              key={review.name}
+              className="flex items-center gap-3 rounded-lg border bg-background px-4 py-3 shadow-sm"
+            >
+              <Avatar className="size-8">
+                <AvatarFallback>{review.name[0]}</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-sm font-medium">{review.name}</p>
+                <p className="text-xs text-muted-foreground">{review.text}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         </Marquee>
       </div>
     ),
@@ -83,7 +83,7 @@ export function MarqueeDemo() {
                 >
                   <span className="text-sm font-medium">{tech}</span>
                 </div>
-              )
+              ),
             )}
           </Marquee>
         </div>

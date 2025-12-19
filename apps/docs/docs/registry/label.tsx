@@ -1,4 +1,4 @@
-import { Label, Checkbox, Input } from '@e412/titanium';
+import { Checkbox, Input, Label } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const labelDocumentation: ComponentDocumentation = {

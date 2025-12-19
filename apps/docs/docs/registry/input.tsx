@@ -5,13 +5,14 @@ import {
   InputWrapper,
   Label,
 } from '@e412/titanium';
-import { Mail, Search, Eye, DollarSign } from 'lucide-react';
+import { DollarSign, Eye, Mail, Search } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
 
 export const inputDocumentation: ComponentDocumentation = {
   id: 'input',
   name: 'Input',
-  description: 'Displays a form input field or a component that looks like an input field.',
+  description:
+    'Displays a form input field or a component that looks like an input field.',
   category: 'form',
   simpleExample: {
     example: (

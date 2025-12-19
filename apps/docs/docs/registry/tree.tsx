@@ -1,9 +1,8 @@
-import { Tree, TreeItem, TreeItemLabel } from '@e412/titanium';
 import { File, Folder } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
 
 // Simple mock tree data for demo purposes
-const treeData = [
+const _treeData = [
   {
     id: 'src',
     name: 'src',

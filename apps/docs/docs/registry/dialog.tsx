@@ -1,13 +1,13 @@
 import {
+  Button,
   Dialog,
+  DialogBody,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogBody,
-  Button,
   Input,
   Label,
 } from '@e412/titanium';
@@ -29,7 +29,8 @@ export const dialogDocumentation: ComponentDocumentation = {
           <DialogHeader>
             <DialogTitle>Dialog Title</DialogTitle>
             <DialogDescription>
-              This is a dialog description that explains what this dialog is for.
+              This is a dialog description that explains what this dialog is
+              for.
             </DialogDescription>
           </DialogHeader>
           <DialogBody>

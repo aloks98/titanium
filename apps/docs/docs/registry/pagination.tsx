@@ -1,9 +1,9 @@
 import {
+  Button,
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  Button,
 } from '@e412/titanium';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
@@ -11,8 +11,7 @@ import type { ComponentDocumentation } from '../types';
 export const paginationDocumentation: ComponentDocumentation = {
   id: 'pagination',
   name: 'Pagination',
-  description:
-    'Navigation component for paginated content.',
+  description: 'Navigation component for paginated content.',
   category: 'navigation',
   simpleExample: {
     example: (
@@ -24,19 +23,29 @@ export const paginationDocumentation: ComponentDocumentation = {
             </Button>
           </PaginationItem>
           <PaginationItem>
-            <Button variant="outline" size="icon">1</Button>
+            <Button variant="outline" size="icon">
+              1
+            </Button>
           </PaginationItem>
           <PaginationItem>
-            <Button variant="outline" size="icon">2</Button>
+            <Button variant="outline" size="icon">
+              2
+            </Button>
           </PaginationItem>
           <PaginationItem>
-            <Button variant="default" size="icon">3</Button>
+            <Button variant="default" size="icon">
+              3
+            </Button>
           </PaginationItem>
           <PaginationItem>
-            <Button variant="outline" size="icon">4</Button>
+            <Button variant="outline" size="icon">
+              4
+            </Button>
           </PaginationItem>
           <PaginationItem>
-            <Button variant="outline" size="icon">5</Button>
+            <Button variant="outline" size="icon">
+              5
+            </Button>
           </PaginationItem>
           <PaginationItem>
             <Button variant="outline" size="icon">
@@ -102,22 +111,32 @@ export function PaginationDemo() {
               </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="outline" size="icon">1</Button>
+              <Button variant="outline" size="icon">
+                1
+              </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="outline" size="icon">2</Button>
+              <Button variant="outline" size="icon">
+                2
+              </Button>
             </PaginationItem>
             <PaginationItem>
               <PaginationEllipsis />
             </PaginationItem>
             <PaginationItem>
-              <Button variant="default" size="icon">8</Button>
+              <Button variant="default" size="icon">
+                8
+              </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="outline" size="icon">9</Button>
+              <Button variant="outline" size="icon">
+                9
+              </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="outline" size="icon">10</Button>
+              <Button variant="outline" size="icon">
+                10
+              </Button>
             </PaginationItem>
             <PaginationItem>
               <Button variant="outline" size="icon">
@@ -294,13 +313,19 @@ export function PaginationCompactDemo() {
               </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="default" size="icon">1</Button>
+              <Button variant="default" size="icon">
+                1
+              </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="outline" size="icon">2</Button>
+              <Button variant="outline" size="icon">
+                2
+              </Button>
             </PaginationItem>
             <PaginationItem>
-              <Button variant="outline" size="icon">3</Button>
+              <Button variant="outline" size="icon">
+                3
+              </Button>
             </PaginationItem>
             <PaginationItem>
               <Button variant="outline" size="icon">

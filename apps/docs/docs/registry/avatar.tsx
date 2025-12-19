@@ -10,8 +10,7 @@ import type { ComponentDocumentation } from '../types';
 export const avatarDocumentation: ComponentDocumentation = {
   id: 'avatar',
   name: 'Avatar',
-  description:
-    'An image element with a fallback for representing the user.',
+  description: 'An image element with a fallback for representing the user.',
   category: 'data-display',
   simpleExample: {
     example: (

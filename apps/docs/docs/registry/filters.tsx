@@ -1,10 +1,10 @@
 import {
-  Filters,
   createFilter,
   type Filter,
   type FilterFieldConfig,
+  Filters,
 } from '@e412/titanium';
-import { User, Calendar, Tag, Mail, Hash, ToggleLeft } from 'lucide-react';
+import { Calendar, Hash, Mail, Tag, ToggleLeft, User } from 'lucide-react';
 import { useState } from 'react';
 import type { ComponentDocumentation } from '../types';
 
@@ -41,11 +41,7 @@ const FiltersDemo = () => {
   ]);
 
   return (
-    <Filters
-      filters={filters}
-      fields={sampleFields}
-      onChange={setFilters}
-    />
+    <Filters filters={filters} fields={sampleFields} onChange={setFilters} />
   );
 };
 
@@ -141,11 +137,7 @@ export function FiltersDemo() {
           const [filters, setFilters] = useState<Filter<unknown>[]>([]);
 
           return (
-            <Filters
-              filters={filters}
-              fields={fields}
-              onChange={setFilters}
-            />
+            <Filters filters={filters} fields={fields} onChange={setFilters} />
           );
         };
         return <MultiTypeDemo />;

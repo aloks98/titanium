@@ -53,8 +53,7 @@ function CalendarMultipleExample() {
 export const calendarDocumentation: ComponentDocumentation = {
   id: 'calendar',
   name: 'Calendar',
-  description:
-    'A date picker calendar component built on react-day-picker.',
+  description: 'A date picker calendar component built on react-day-picker.',
   category: 'data-display',
   simpleExample: {
     example: <CalendarControlledExample />,
@@ -132,10 +131,7 @@ export function CalendarMultipleDemo() {
       example: (
         <Calendar
           mode="single"
-          disabled={[
-            { dayOfWeek: [0, 6] },
-            { before: new Date() },
-          ]}
+          disabled={[{ dayOfWeek: [0, 6] }, { before: new Date() }]}
           className="rounded-md border"
         />
       ),

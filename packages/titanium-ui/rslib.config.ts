@@ -28,7 +28,7 @@ export default defineConfig({
         {
           from: path.resolve(__dirname, './lib/themes'),
           to: path.resolve(__dirname, './dist/themes'),
-        }
+        },
       ],
     },
   },

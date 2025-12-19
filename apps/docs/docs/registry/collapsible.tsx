@@ -1,8 +1,8 @@
 import {
+  Button,
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-  Button,
 } from '@e412/titanium';
 import { ChevronsUpDown } from 'lucide-react';
 import { useState } from 'react';
@@ -12,7 +12,11 @@ function CollapsibleControlledExample() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-[350px] space-y-2">
+    <Collapsible
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      className="w-[350px] space-y-2"
+    >
       <div className="flex items-center justify-between space-x-4 px-4">
         <h4 className="text-sm font-semibold">
           @peduarte starred 3 repositories
@@ -42,8 +46,7 @@ function CollapsibleControlledExample() {
 export const collapsibleDocumentation: ComponentDocumentation = {
   id: 'collapsible',
   name: 'Collapsible',
-  description:
-    'An interactive component that expands and collapses content.',
+  description: 'An interactive component that expands and collapses content.',
   category: 'layout',
   simpleExample: {
     example: (

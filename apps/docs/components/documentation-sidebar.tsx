@@ -1,7 +1,7 @@
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useDocsRegistry } from '../docs/store/useDocsRegistery';
-import { categoryNames, type ComponentCategory } from '../docs/types';
 import { BookOpen } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useDocsRegistry } from '../docs/store/useDocsRegistery';
+import { type ComponentCategory, categoryNames } from '../docs/types';
 
 interface DocumentationSidebarProps {
   currentComponentId: string;

@@ -1,31 +1,31 @@
 import {
+  Button,
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuCheckboxItem,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuShortcut,
-  DropdownMenuGroup,
-  Button,
+  DropdownMenuTrigger,
 } from '@e412/titanium';
 import {
-  User,
   CreditCard,
-  Settings,
   Keyboard,
-  UserPlus,
+  LogOut,
   Mail,
   MessageSquare,
-  PlusCircle,
   Plus,
-  LogOut,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
 } from 'lucide-react';
 import { useState } from 'react';
 import type { ComponentDocumentation } from '../types';
@@ -90,8 +90,7 @@ function DropdownMenuRadioExample() {
 export const dropdownMenuDocumentation: ComponentDocumentation = {
   id: 'dropdown-menu',
   name: 'Dropdown Menu',
-  description:
-    'Displays a menu of actions or options triggered by a button.',
+  description: 'Displays a menu of actions or options triggered by a button.',
   category: 'navigation',
   simpleExample: {
     example: (
@@ -419,9 +418,7 @@ export function DropdownMenuSubmenuDemo() {
             <DropdownMenuItem>Edit</DropdownMenuItem>
             <DropdownMenuItem>Duplicate</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem variant="destructive">
-              Delete
-            </DropdownMenuItem>
+            <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       ),

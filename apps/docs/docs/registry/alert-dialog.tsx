@@ -8,8 +8,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
+  Button,
 } from '@e412/titanium';
-import { Button } from '@e412/titanium';
 
 import type { ComponentDocumentation } from '../types';
 

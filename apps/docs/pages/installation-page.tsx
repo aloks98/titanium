@@ -1,8 +1,8 @@
-import { DocumentationSidebar } from '../components/documentation-sidebar';
-import { TopBar } from '../components/top-bar';
-import { CopyButton } from '../components/copy-button';
 import { Link } from 'react-router-dom';
 import ShikiHighlighter from 'react-shiki';
+import { CopyButton } from '../components/copy-button';
+import { DocumentationSidebar } from '../components/documentation-sidebar';
+import { TopBar } from '../components/top-bar';
 
 export function InstallationPage() {
   return (
@@ -17,39 +17,55 @@ export function InstallationPage() {
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-4xl mx-auto px-6 py-12">
             <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Installation
-          </h1>
-          <p className="text-lg text-muted-foreground mb-12">
-            Get started with Titanium UI in your React project.
-          </p>
-
-          {/* Installation */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">1. Install the package</h2>
-            <p className="text-muted-foreground mb-4">
-              Install Titanium UI using your preferred package manager:
+              Installation
+            </h1>
+            <p className="text-lg text-muted-foreground mb-12">
+              Get started with Titanium UI in your React project.
             </p>
-            <div className="space-y-3">
-              <CodeBlock title="pnpm" code="pnpm add @e412/titanium" language="bash" />
-              <CodeBlock title="npm" code="npm install @e412/titanium" language="bash" />
-              <CodeBlock title="yarn" code="yarn add @e412/titanium" language="bash" />
-            </div>
-          </section>
 
-          {/* Tailwind CSS Setup */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">2. Configure Tailwind CSS</h2>
-            <p className="text-muted-foreground mb-4">
-              Titanium UI uses Tailwind CSS v4. Create or update your{' '}
-              <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
-                styles.css
-              </code>{' '}
-              file with the following configuration:
-            </p>
-            <CodeBlock
-              title="src/styles.css"
-              language="css"
-              code={`/* Font imports must come first */
+            {/* Installation */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">
+                1. Install the package
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Install Titanium UI using your preferred package manager:
+              </p>
+              <div className="space-y-3">
+                <CodeBlock
+                  title="pnpm"
+                  code="pnpm add @e412/titanium"
+                  language="bash"
+                />
+                <CodeBlock
+                  title="npm"
+                  code="npm install @e412/titanium"
+                  language="bash"
+                />
+                <CodeBlock
+                  title="yarn"
+                  code="yarn add @e412/titanium"
+                  language="bash"
+                />
+              </div>
+            </section>
+
+            {/* Tailwind CSS Setup */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">
+                2. Configure Tailwind CSS
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Titanium UI uses Tailwind CSS v4. Create or update your{' '}
+                <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                  styles.css
+                </code>{' '}
+                file with the following configuration:
+              </p>
+              <CodeBlock
+                title="src/styles.css"
+                language="css"
+                code={`/* Font imports must come first */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 
@@ -167,28 +183,41 @@ export function InstallationPage() {
 html {
     scroll-behavior: smooth;
 }`}
-            />
-            <div className="mt-4 p-4 rounded-lg bg-muted/50 border">
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Why this setup?</strong> Titanium UI exports CSS variables for theming.
-                By mapping these to Tailwind's theme using{' '}
-                <code className="px-1 py-0.5 rounded bg-muted text-xs font-mono">@theme inline</code>,
-                you get full access to the theme colors with Tailwind utilities like{' '}
-                <code className="px-1 py-0.5 rounded bg-muted text-xs font-mono">bg-primary</code>,{' '}
-                <code className="px-1 py-0.5 rounded bg-muted text-xs font-mono">text-muted-foreground</code>, etc.
-              </p>
-            </div>
-          </section>
+              />
+              <div className="mt-4 p-4 rounded-lg bg-muted/50 border">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">Why this setup?</strong>{' '}
+                  Titanium UI exports CSS variables for theming. By mapping
+                  these to Tailwind's theme using{' '}
+                  <code className="px-1 py-0.5 rounded bg-muted text-xs font-mono">
+                    @theme inline
+                  </code>
+                  , you get full access to the theme colors with Tailwind
+                  utilities like{' '}
+                  <code className="px-1 py-0.5 rounded bg-muted text-xs font-mono">
+                    bg-primary
+                  </code>
+                  ,{' '}
+                  <code className="px-1 py-0.5 rounded bg-muted text-xs font-mono">
+                    text-muted-foreground
+                  </code>
+                  , etc.
+                </p>
+              </div>
+            </section>
 
-          {/* Theme Setup */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">3. Add ThemeProvider</h2>
-            <p className="text-muted-foreground mb-4">
-              Wrap your app with the ThemeProvider to enable theming and dark mode support:
-            </p>
-            <CodeBlock
-              title="src/App.tsx"
-              code={`import { ThemeProvider, Toaster } from '@e412/titanium';
+            {/* Theme Setup */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">
+                3. Add ThemeProvider
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Wrap your app with the ThemeProvider to enable theming and dark
+                mode support:
+              </p>
+              <CodeBlock
+                title="src/App.tsx"
+                code={`import { ThemeProvider, Toaster } from '@e412/titanium';
 import './styles.css';
 
 function App() {
@@ -199,25 +228,39 @@ function App() {
     </ThemeProvider>
   );
 }`}
-            />
-            <p className="text-muted-foreground mt-4">
-              The ThemeProvider manages light/dark mode. Set{' '}
-              <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">defaultTheme</code>{' '}
-              to <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">"light"</code>,{' '}
-              <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">"dark"</code>, or{' '}
-              <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">"system"</code>.
-            </p>
-          </section>
+              />
+              <p className="text-muted-foreground mt-4">
+                The ThemeProvider manages light/dark mode. Set{' '}
+                <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                  defaultTheme
+                </code>{' '}
+                to{' '}
+                <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                  "light"
+                </code>
+                ,{' '}
+                <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                  "dark"
+                </code>
+                , or{' '}
+                <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                  "system"
+                </code>
+                .
+              </p>
+            </section>
 
-          {/* Using Components */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">4. Start using components</h2>
-            <p className="text-muted-foreground mb-4">
-              Import and use components directly from the package:
-            </p>
-            <CodeBlock
-              title="Example"
-              code={`import { Button, Card, CardHeader, CardTitle, CardContent } from '@e412/titanium';
+            {/* Using Components */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">
+                4. Start using components
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Import and use components directly from the package:
+              </p>
+              <CodeBlock
+                title="Example"
+                code={`import { Button, Card, CardHeader, CardTitle, CardContent } from '@e412/titanium';
 
 export function MyComponent() {
   return (
@@ -232,56 +275,71 @@ export function MyComponent() {
     </Card>
   );
 }`}
-            />
-          </section>
+              />
+            </section>
 
-          {/* TypeScript */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">TypeScript Support</h2>
-            <p className="text-muted-foreground mb-4">
-              Titanium UI is written in TypeScript and includes full type definitions.
-              If you're using path aliases, add the following to your{' '}
-              <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">tsconfig.json</code>:
-            </p>
-            <CodeBlock
-              title="tsconfig.json"
-              language="json"
-              code={`{
+            {/* TypeScript */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">
+                TypeScript Support
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Titanium UI is written in TypeScript and includes full type
+                definitions. If you're using path aliases, add the following to
+                your{' '}
+                <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                  tsconfig.json
+                </code>
+                :
+              </p>
+              <CodeBlock
+                title="tsconfig.json"
+                language="json"
+                code={`{
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
     }
   }
 }`}
-            />
-          </section>
+              />
+            </section>
 
-          {/* Next Steps */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>
-                <Link to="/components" className="text-primary hover:underline">
-                  Browse all components
-                </Link>{' '}
-                to see what's available
-              </li>
-              <li>
-                Check out the{' '}
-                <Link to="/component/button" className="text-primary hover:underline">
-                  Button component
-                </Link>{' '}
-                as a starting point
-              </li>
-              <li>
-                Learn about{' '}
-                <Link to="/component/form" className="text-primary hover:underline">
-                  Form components
-                </Link>{' '}
-                for building forms with validation
-              </li>
-            </ul>
-          </section>
+            {/* Next Steps */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <li>
+                  <Link
+                    to="/components"
+                    className="text-primary hover:underline"
+                  >
+                    Browse all components
+                  </Link>{' '}
+                  to see what's available
+                </li>
+                <li>
+                  Check out the{' '}
+                  <Link
+                    to="/component/button"
+                    className="text-primary hover:underline"
+                  >
+                    Button component
+                  </Link>{' '}
+                  as a starting point
+                </li>
+                <li>
+                  Learn about{' '}
+                  <Link
+                    to="/component/form"
+                    className="text-primary hover:underline"
+                  >
+                    Form components
+                  </Link>{' '}
+                  for building forms with validation
+                </li>
+              </ul>
+            </section>
           </div>
         </div>
       </div>
@@ -301,7 +359,9 @@ function CodeBlock({
   return (
     <div className="rounded-md overflow-hidden">
       <div className="px-4 py-2 bg-muted/50 border-b flex items-center justify-between">
-        <span className="text-sm font-medium text-muted-foreground">{title}</span>
+        <span className="text-sm font-medium text-muted-foreground">
+          {title}
+        </span>
         <CopyButton code={code} />
       </div>
       <div className="overflow-x-auto max-h-[500px] overflow-y-auto [&_pre]:!rounded-t-none">

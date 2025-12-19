@@ -1,18 +1,18 @@
 import {
   Menubar,
+  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
+  MenubarLabel,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarTrigger,
-  MenubarCheckboxItem,
   MenubarRadioGroup,
   MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
   MenubarSub,
   MenubarSubContent,
   MenubarSubTrigger,
-  MenubarLabel,
+  MenubarTrigger,
 } from '@e412/titanium';
 import { useState } from 'react';
 import type { ComponentDocumentation } from '../types';
@@ -156,9 +156,7 @@ export function MenubarDemo() {
                 New Window
                 <MenubarShortcut>⌘N</MenubarShortcut>
               </MenubarItem>
-              <MenubarItem disabled>
-                New Incognito Window
-              </MenubarItem>
+              <MenubarItem disabled>New Incognito Window</MenubarItem>
               <MenubarSeparator />
               <MenubarItem>
                 Share

@@ -1,14 +1,14 @@
 import {
+  Button,
   Command,
   CommandDialog,
-  CommandInput,
-  CommandList,
   CommandEmpty,
   CommandGroup,
+  CommandInput,
   CommandItem,
+  CommandList,
   CommandSeparator,
   CommandShortcut,
-  Button,
 } from '@e412/titanium';
 import {
   Calculator,
@@ -127,7 +127,8 @@ export function CommandDemo() {
     {
       id: 'dialog',
       title: 'Command Dialog',
-      description: 'Command palette as a modal dialog triggered by keyboard shortcut.',
+      description:
+        'Command palette as a modal dialog triggered by keyboard shortcut.',
       example: (() => {
         const CommandDialogDemo = () => {
           const [open, setOpen] = useState(false);

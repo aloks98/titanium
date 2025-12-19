@@ -1,5 +1,3 @@
-import { Scrollspy, Button } from '@e412/titanium';
-import { useRef } from 'react';
 import type { ComponentDocumentation } from '../types';
 
 export const scrollspyDocumentation: ComponentDocumentation = {
@@ -128,7 +126,8 @@ export function ScrollspyOffsetDemo() {
     {
       id: 'with-callback',
       title: 'With Update Callback',
-      description: 'Scrollspy with onUpdate callback for tracking active section.',
+      description:
+        'Scrollspy with onUpdate callback for tracking active section.',
       example: (
         <div className="rounded-lg border p-4">
           <p className="text-sm text-muted-foreground">
@@ -197,7 +196,8 @@ export function ScrollspyNoHistoryDemo() {
   api: [
     {
       component: 'Scrollspy',
-      description: 'Tracks scroll position and highlights active navigation items.',
+      description:
+        'Tracks scroll position and highlights active navigation items.',
       props: [
         {
           name: 'targetRef',

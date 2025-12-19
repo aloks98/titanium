@@ -1,11 +1,11 @@
 import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
   Avatar,
-  AvatarImage,
   AvatarFallback,
+  AvatarImage,
   Button,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
 } from '@e412/titanium';
 import { CalendarDays } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
@@ -162,7 +162,9 @@ export function HoverCardAlignmentDemo() {
           <HoverCardContent className="w-80">
             <div className="space-y-3">
               <div className="h-32 bg-muted rounded-md flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">Product Image</span>
+                <span className="text-muted-foreground text-sm">
+                  Product Image
+                </span>
               </div>
               <div>
                 <h4 className="text-sm font-semibold">MacBook Pro 14"</h4>

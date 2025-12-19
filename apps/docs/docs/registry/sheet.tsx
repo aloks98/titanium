@@ -1,15 +1,15 @@
 import {
+  Button,
+  Input,
+  Label,
   Sheet,
+  SheetBody,
   SheetContent,
   SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetBody,
-  Button,
-  Input,
-  Label,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 

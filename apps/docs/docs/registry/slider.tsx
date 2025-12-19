@@ -1,4 +1,4 @@
-import { Slider, SliderThumb, Label } from '@e412/titanium';
+import { Label, Slider, SliderThumb } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const sliderDocumentation: ComponentDocumentation = {

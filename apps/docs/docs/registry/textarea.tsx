@@ -1,4 +1,4 @@
-import { Textarea, Label } from '@e412/titanium';
+import { Label, Textarea } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const textareaDocumentation: ComponentDocumentation = {

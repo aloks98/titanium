@@ -1,4 +1,6 @@
 import {
+  Button,
+  Checkbox,
   Form,
   FormControl,
   FormDescription,
@@ -7,8 +9,6 @@ import {
   FormLabel,
   FormMessage,
   Input,
-  Button,
-  Checkbox,
   Select,
   SelectContent,
   SelectItem,
@@ -77,9 +77,7 @@ function FormWithValidationExample() {
               <FormControl>
                 <Input type="email" placeholder="name@example.com" {...field} />
               </FormControl>
-              <FormDescription>
-                We'll never share your email.
-              </FormDescription>
+              <FormDescription>We'll never share your email.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -100,9 +98,7 @@ function FormWithValidationExample() {
               <FormControl>
                 <Input type="password" placeholder="••••••••" {...field} />
               </FormControl>
-              <FormDescription>
-                Must be at least 8 characters.
-              </FormDescription>
+              <FormDescription>Must be at least 8 characters.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -511,7 +507,8 @@ export function FormWithCheckboxDemo() {
     },
     {
       component: 'FormLabel',
-      description: 'Label component that automatically connects to the form field.',
+      description:
+        'Label component that automatically connects to the form field.',
       props: [
         {
           name: 'className',
@@ -535,7 +532,8 @@ export function FormWithCheckboxDemo() {
     },
     {
       component: 'FormDescription',
-      description: 'Helper text displayed below the input. Hidden when there is an error.',
+      description:
+        'Helper text displayed below the input. Hidden when there is an error.',
       props: [
         {
           name: 'className',

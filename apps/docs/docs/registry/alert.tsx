@@ -1,19 +1,11 @@
 import {
   Alert,
-  AlertDescription,
-  AlertTitle,
-  AlertIcon,
   AlertContent,
-  AlertToolbar,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
 } from '@e412/titanium';
-import {
-  CheckCircle,
-  Info,
-  AlertTriangle,
-  XCircle,
-  Bell,
-  X,
-} from 'lucide-react';
+import { AlertTriangle, Bell, CheckCircle } from 'lucide-react';
 import type { ComponentDocumentation } from '../types';
 
 export const alertDocumentation: ComponentDocumentation = {

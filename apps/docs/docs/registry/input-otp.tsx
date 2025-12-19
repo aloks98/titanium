@@ -1,16 +1,15 @@
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSlot,
   InputOTPSeparator,
+  InputOTPSlot,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const inputOtpDocumentation: ComponentDocumentation = {
   id: 'input-otp',
   name: 'Input OTP',
-  description:
-    'A one-time password input component for verification codes.',
+  description: 'A one-time password input component for verification codes.',
   category: 'form',
   simpleExample: {
     example: (

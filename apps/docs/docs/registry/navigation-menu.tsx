@@ -40,8 +40,7 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: 'Tooltip',
     href: '#',
-    description:
-      'A popup that displays information related to an element.',
+    description: 'A popup that displays information related to an element.',
   },
 ];
 
@@ -621,7 +620,8 @@ export function NavigationMenuNoViewportDemo() {
     },
     {
       component: 'navigationMenuTriggerStyle',
-      description: 'A CVA utility for styling navigation menu triggers and links.',
+      description:
+        'A CVA utility for styling navigation menu triggers and links.',
       props: [],
     },
   ],

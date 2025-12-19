@@ -15,11 +15,13 @@
     "storybook": "pnpm -C packages/titanium-ui storybook",
     "test": "vitest run",
     "dev": "pnpm -C apps/docs dev",
-    "dev:docs": "pnpm -C apps/docs dev"
+    "dev:docs": "pnpm -C apps/docs dev",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.5",
     "concurrently": "^9.2.1",
+    "husky": "^9.1.7",
     "typescript": "^5.8.2",
     "vitest": "^3.0.9"
   },

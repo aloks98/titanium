@@ -1,9 +1,9 @@
 import {
   DateField,
-  TimeField,
   DateInput,
   DateSegment,
   Label,
+  TimeField,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
@@ -17,9 +17,7 @@ export const datefieldDocumentation: ComponentDocumentation = {
     example: (
       <DateField className="space-y-2">
         <Label>Date of birth</Label>
-        <DateInput>
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
+        <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
       </DateField>
     ),
     code: `import {

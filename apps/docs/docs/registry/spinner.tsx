@@ -1,11 +1,10 @@
-import { Spinner, Button } from '@e412/titanium';
+import { Button, Spinner } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const spinnerDocumentation: ComponentDocumentation = {
   id: 'spinner',
   name: 'Spinner',
-  description:
-    'A loading spinner component with multiple visual variants.',
+  description: 'A loading spinner component with multiple visual variants.',
   category: 'feedback',
   simpleExample: {
     example: (

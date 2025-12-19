@@ -1,24 +1,23 @@
 import {
+  TypographyBlockquote,
   TypographyH1,
   TypographyH2,
   TypographyH3,
   TypographyH4,
-  TypographyP,
-  TypographyBlockquote,
-  TypographyList,
   TypographyInlineCode,
-  TypographyLead,
   TypographyLarge,
-  TypographySmall,
+  TypographyLead,
+  TypographyList,
   TypographyMuted,
+  TypographyP,
+  TypographySmall,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 export const typographyDocumentation: ComponentDocumentation = {
   id: 'typography',
   name: 'Typography',
-  description:
-    'Pre-styled typography components for consistent text styling.',
+  description: 'Pre-styled typography components for consistent text styling.',
   category: 'typography',
   simpleExample: {
     example: (
@@ -80,11 +79,12 @@ export function TypographyHeadingsDemo() {
       example: (
         <div className="space-y-4">
           <TypographyLead>
-            A modal dialog that interrupts the user with important content and expects a response.
+            A modal dialog that interrupts the user with important content and
+            expects a response.
           </TypographyLead>
           <TypographyP>
-            The king, seeing how much happier his subjects were, realized the error of his ways
-            and pledged to rule with wisdom and humility.
+            The king, seeing how much happier his subjects were, realized the
+            error of his ways and pledged to rule with wisdom and humility.
           </TypographyP>
         </div>
       ),
@@ -109,7 +109,8 @@ export function TypographyParagraphDemo() {
       description: 'Styled blockquote for quotations.',
       example: (
         <TypographyBlockquote>
-          "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
+          "After all," he said, "everyone enjoys a good joke, so it's only fair
+          that they should pay for the privilege."
         </TypographyBlockquote>
       ),
       code: `import { TypographyBlockquote } from '@e412/titanium';
@@ -151,7 +152,8 @@ export function TypographyListDemo() {
       description: 'Inline code styling for technical content.',
       example: (
         <TypographyP>
-          You can use the <TypographyInlineCode>useEffect</TypographyInlineCode> hook to perform side effects in functional components.
+          You can use the <TypographyInlineCode>useEffect</TypographyInlineCode>{' '}
+          hook to perform side effects in functional components.
         </TypographyP>
       ),
       code: `import { TypographyP, TypographyInlineCode } from '@e412/titanium';

@@ -12,7 +12,7 @@ export function DocumentationLayout({ componentId }: DocumentationLayoutProps) {
 
   useEffect(() => {
     contentRef.current?.scrollTo(0, 0);
-  }, [componentId]);
+  }, []);
 
   return (
     <div className="h-screen w-screen flex flex-col bg-background overflow-hidden">

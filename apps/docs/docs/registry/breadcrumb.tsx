@@ -1,11 +1,11 @@
 import {
   Breadcrumb,
+  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,

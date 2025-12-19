@@ -2,7 +2,7 @@ import { ScrollArea, ScrollBar, Separator } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
 const tags = Array.from({ length: 50 }).map(
-  (_, i, a) => `v1.2.0-beta.${a.length - i}`
+  (_, i, a) => `v1.2.0-beta.${a.length - i}`,
 );
 
 const artworks = [
@@ -16,8 +16,7 @@ const artworks = [
 export const scrollAreaDocumentation: ComponentDocumentation = {
   id: 'scroll-area',
   name: 'Scroll Area',
-  description:
-    'A custom scrollable area with styled scrollbars.',
+  description: 'A custom scrollable area with styled scrollbars.',
   category: 'layout',
   simpleExample: {
     example: (
@@ -139,8 +138,8 @@ export function ScrollAreaHorizontalDemo() {
               {Array.from({ length: 20 }).map((_, i) => (
                 <div key={i} className="py-2">
                   <span className="text-sm">
-                    Row {i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed do eiusmod tempor incididunt ut labore.
+                    Row {i + 1}: Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
                   </span>
                 </div>
               ))}

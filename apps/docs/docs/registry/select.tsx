@@ -1,13 +1,13 @@
 import {
+  Label,
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectLabel,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
-  SelectSeparator,
-  Label,
 } from '@e412/titanium';
 import type { ComponentDocumentation } from '../types';
 
