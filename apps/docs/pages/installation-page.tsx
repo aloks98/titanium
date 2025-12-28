@@ -14,7 +14,7 @@ export function InstallationPage() {
           <DocumentationSidebar currentComponentId="" />
         </div>
 
-        <div className="flex-1 overflow-y-auto">
+        <div data-scroll-container className="flex-1 overflow-y-auto">
           <div className="max-w-4xl mx-auto px-6 py-12">
             <h1 className="text-4xl font-bold tracking-tight mb-4">
               Installation

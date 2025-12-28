@@ -1,0 +1,85 @@
+# Titanium UI
+
+> Titanium UI is a modern, themeable React component library built on Radix UI primitives with Tailwind CSS styling. It provides 50+ production-ready, accessible components with 6 built-in color themes and light/dark mode support.
+
+Package: `@e412/titanium`
+Based on: [ReUI](https://reui.io)
+
+## Getting Started
+
+- [Installation](/docs/installation.md): How to install and set up Titanium UI in your React project
+- [Theming](/docs/theming.md): Customize colors, typography, and design tokens using CSS variables
+- [Dark Mode](/docs/dark-mode.md): Implement light/dark mode with system preference detection
+- [Themes](/docs/themes.md): Available pre-built themes and how to use them
+
+## UI Components
+
+These are custom-built components for specialized functionality:
+
+- [Calendar](/docs/components/calendar.md): Date picker with range selection, keyboard navigation, and localization support
+- [Data Grid](/docs/components/data-grid.md): Powerful data table built on TanStack Table with sorting, filtering, pagination, and drag-and-drop row reordering
+- [Filters](/docs/components/filters.md): Filter controls for data filtering with multiple filter types
+- [Form](/docs/components/form.md): Form handling with React Hook Form integration and Zod validation
+- [Kanban](/docs/components/kanban.md): Drag-and-drop kanban board built on DnD Kit for project management workflows
+- [Marquee](/docs/components/marquee.md): Scrolling text and content display with customizable speed and direction
+- [Scrollspy](/docs/components/scrollspy.md): Navigation component that highlights active sections based on scroll position
+- [Sidebar](/docs/components/sidebar.md): Collapsible sidebar navigation with responsive behavior
+- [Sortable](/docs/components/sortable.md): Drag-and-drop sortable lists built on DnD Kit
+- [Stepper](/docs/components/stepper.md): Multi-step form wizard with progress indication
+- [Tree](/docs/components/tree.md): Hierarchical tree view for nested data visualization
+
+## Radix UI Components
+
+These components are built on Radix UI primitives with full accessibility support:
+
+- [Accordion](/docs/components/accordion.md): Collapsible content sections with smooth animations and keyboard navigation
+- [Alert](/docs/components/alert.md): Contextual feedback messages with variant styles for success, warning, and error states
+- [Alert Dialog](/docs/components/alert-dialog.md): Modal dialog for important confirmations requiring user action
+- [Aspect Ratio](/docs/components/aspect-ratio.md): Maintain consistent aspect ratios for images and media
+- [Avatar](/docs/components/avatar.md): User profile images with fallback initials and status indicators
+- [Badge](/docs/components/badge.md): Small status indicators and labels with multiple variants
+- [Breadcrumb](/docs/components/breadcrumb.md): Navigation breadcrumbs showing hierarchical page location
+- [Button](/docs/components/button.md): Versatile button with 8 variants, 4 sizes, and multiple modes including icon and link
+- [Card](/docs/components/card.md): Container component for grouping related content with header, body, and footer
+- [Carousel](/docs/components/carousel.md): Image and content carousel with navigation and autoplay
+- [Checkbox](/docs/components/checkbox.md): Accessible checkbox input with indeterminate state support
+- [Collapsible](/docs/components/collapsible.md): Expandable content sections with animation support
+- [Command](/docs/components/command.md): Command palette for keyboard-driven navigation and search
+- [Context Menu](/docs/components/context-menu.md): Right-click context menus with nested submenus
+- [Datefield](/docs/components/datefield.md): Date input field with formatting and validation
+- [Dialog](/docs/components/dialog.md): Modal dialogs with focus trapping and accessibility features
+- [Drawer](/docs/components/drawer.md): Slide-out panel from screen edges for mobile-friendly navigation
+- [Dropdown Menu](/docs/components/dropdown-menu.md): Dropdown menus with keyboard navigation and submenus
+- [Hover Card](/docs/components/hover-card.md): Preview content on hover with smooth animations
+- [Input](/docs/components/input.md): Text input with validation states, icons, and addons
+- [Input OTP](/docs/components/input-otp.md): One-time password input with auto-focus and paste support
+- [Kbd](/docs/components/kbd.md): Keyboard shortcut display component
+- [Label](/docs/components/label.md): Accessible form labels with required indicator support
+- [Menubar](/docs/components/menubar.md): Horizontal menu bar for application navigation
+- [Navigation Menu](/docs/components/navigation-menu.md): Complex navigation with dropdowns and megamenus
+- [Pagination](/docs/components/pagination.md): Page navigation with customizable page size options
+- [Popover](/docs/components/popover.md): Floating content panels triggered by user interaction
+- [Progress](/docs/components/progress.md): Progress indicators with percentage and indeterminate states
+- [Radio Group](/docs/components/radio-group.md): Radio button groups with keyboard navigation
+- [Resizable](/docs/components/resizable.md): Resizable panel layouts with draggable dividers
+- [Scroll Area](/docs/components/scroll-area.md): Custom scrollbars with cross-browser consistency
+- [Select](/docs/components/select.md): Dropdown select with search, multi-select, and groups
+- [Separator](/docs/components/separator.md): Visual dividers for content separation
+- [Sheet](/docs/components/sheet.md): Slide-out panels from any screen edge
+- [Skeleton](/docs/components/skeleton.md): Loading placeholder animations
+- [Slider](/docs/components/slider.md): Range slider with single or dual handles
+- [Sonner](/docs/components/sonner.md): Toast notifications with rich content support
+- [Spinner](/docs/components/spinner.md): Loading spinner indicators
+- [Switch](/docs/components/switch.md): Toggle switch for boolean settings
+- [Table](/docs/components/table.md): Data tables with sorting and custom cell rendering
+- [Tabs](/docs/components/tabs.md): Tabbed content organization with keyboard navigation
+- [Textarea](/docs/components/textarea.md): Multi-line text input with auto-resize support
+- [Toggle](/docs/components/toggle.md): Toggle button for binary states
+- [Toggle Group](/docs/components/toggle-group.md): Group of toggle buttons with single or multi-select
+- [Tooltip](/docs/components/tooltip.md): Informational tooltips with customizable placement
+- [Typography](/docs/components/typography.md): Text styling components for headings, paragraphs, and more
+
+## Utilities
+
+- [Theme Provider](/docs/components/theme-provider.md): Context provider for theme management and dark mode
+- [cn utility](/docs/utilities.md): Class name merging utility using clsx and tailwind-merge

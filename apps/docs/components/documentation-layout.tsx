@@ -11,7 +11,7 @@ export function DocumentationLayout({ componentId }: DocumentationLayoutProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    contentRef.current?.scrollTo(0, 0);
+    contentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
@@ -23,7 +23,11 @@ export function DocumentationLayout({ componentId }: DocumentationLayoutProps) {
           <DocumentationSidebar currentComponentId={componentId} />
         </div>
 
-        <div ref={contentRef} className="flex-1 overflow-y-auto">
+        <div
+          ref={contentRef}
+          data-scroll-container
+          className="flex-1 overflow-y-auto"
+        >
           <ComponentViewer componentId={componentId} />
         </div>
       </div>

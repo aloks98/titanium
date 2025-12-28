@@ -6,7 +6,11 @@ export function ScrollToTop() {
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: intentionally re-run on pathname change
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll all containers marked with data-scroll-container to top
+    const containers = document.querySelectorAll('[data-scroll-container]');
+    containers.forEach((container) => {
+      container.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }, [pathname]);
 
   return null;
