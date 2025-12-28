@@ -1,40 +1,24 @@
 import {
   Button,
-  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   Kbd,
+  SidebarTrigger,
   useTheme,
 } from '@e412/titanium';
 import { Github, Moon, Search, Sun } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCommandStore } from '../stores/useCommandStore';
 
-interface TopBarProps {
-  className?: string;
-}
-
-export function TopBar({ className }: TopBarProps) {
+export function AppHeader() {
   const { setTheme } = useTheme();
-  const navigate = useNavigate();
   const { open } = useCommandStore();
 
   return (
-    <header
-      className={cn(
-        'flex h-16 shrink-0 items-center gap-2 border-b border-border bg-background px-4',
-        className,
-      )}
-    >
-      <button
-        type="button"
-        onClick={() => navigate('/')}
-        className="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity"
-      >
-        Titanium UI
-      </button>
+    <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border bg-background px-4">
+      <SidebarTrigger className="md:hidden" />
       <div className="flex-1" />
       <Button
         variant="outline"
@@ -45,7 +29,7 @@ export function TopBar({ className }: TopBarProps) {
           <Search className="h-4 w-4" />
           <span>Search components...</span>
         </div>
-        <Kbd keys={['command']}>K</Kbd>
+        <Kbd>⌘K</Kbd>
       </Button>
       <Button variant="outline" size="icon" asChild>
         <Link

@@ -14,8 +14,8 @@ const App = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/installation" element={<InstallationPage />} />
         <Route path="/components" element={<ComponentsPage />} />
+        <Route path="/installation" element={<InstallationPage />} />
         <Route path="/component/:id" element={<ComponentDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -1,15 +1,19 @@
 import { Navigate, useParams } from 'react-router-dom';
-import { DocumentationLayout } from '../components/documentation-layout';
+import { ComponentViewer } from '../components/component-viewer';
+import { DocsLayout } from '../components/docs-layout';
 import { useDocsRegistry } from '../docs/store/useDocsRegistery';
 
 export function ComponentDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { docs } = useDocsRegistry();
 
-  // If no id provided or component doesn't exist, redirect to components list
   if (!id || !docs[id]) {
     return <Navigate to="/components" replace />;
   }
 
-  return <DocumentationLayout componentId={id} />;
+  return (
+    <DocsLayout currentComponentId={id}>
+      <ComponentViewer componentId={id} />
+    </DocsLayout>
+  );
 }

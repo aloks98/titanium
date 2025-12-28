@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle } from '@e412/titanium';
 import { useNavigate } from 'react-router-dom';
-import { TopBar } from '../components/top-bar';
+import { VersionFooter } from '../components/version-footer';
 import { useDocsRegistry } from '../docs/store/useDocsRegistery';
 
 export function ComponentsPage() {
@@ -12,9 +12,8 @@ export function ComponentsPage() {
   >;
 
   return (
-    <div className="h-screen w-screen flex flex-col bg-background overflow-hidden">
-      <TopBar />
-      <div data-scroll-container className="flex-1 overflow-y-auto">
+    <div className="flex min-h-svh w-full flex-col bg-background">
+      <div className="flex-1 overflow-auto" data-scroll-container>
         <div className="mx-auto max-w-7xl px-6 py-12">
           <div className="mb-12">
             <h1 className="text-3xl font-bold tracking-tight text-foreground">
@@ -47,6 +46,7 @@ export function ComponentsPage() {
           ))}
         </div>
       </div>
+      <VersionFooter />
     </div>
   );
 }
