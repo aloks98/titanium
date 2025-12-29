@@ -7,6 +7,9 @@
 node_modules
 dist/
 
+# Turborepo
+.turbo
+
 # IDE
 .vscode/*
 !.vscode/extensions.json
