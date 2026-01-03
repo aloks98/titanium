@@ -19,6 +19,7 @@ import { datefieldDocumentation } from '../registry/datefield.tsx';
 import { dialogDocumentation } from '../registry/dialog.tsx';
 import { drawerDocumentation } from '../registry/drawer.tsx';
 import { dropdownMenuDocumentation } from '../registry/dropdown-menu.tsx';
+import { fieldDocumentation } from '../registry/field.tsx';
 import { filtersDocumentation } from '../registry/filters.tsx';
 import { formDocumentation } from '../registry/form.tsx';
 import { hoverCardDocumentation } from '../registry/hover-card.tsx';
@@ -98,6 +99,7 @@ const componentRegistry: Record<string, ComponentDocumentation> = {
   toggle: toggleDocumentation,
   'toggle-group': toggleGroupDocumentation,
   'input-otp': inputOtpDocumentation,
+  field: fieldDocumentation,
   form: formDocumentation,
   'dropdown-menu': dropdownMenuDocumentation,
   'context-menu': contextMenuDocumentation,

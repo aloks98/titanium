@@ -18,6 +18,7 @@ export * from './base/datefield';
 export * from './base/dialog';
 export * from './base/drawer';
 export * from './base/dropdown-menu';
+export * from './base/field';
 export * from './base/filters';
 export * from './base/form';
 export * from './base/hover-card';
