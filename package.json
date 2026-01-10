@@ -13,7 +13,7 @@
     "watch": "turbo run watch --filter=@e412/titanium",
     "format": "biome format --write",
     "storybook": "turbo run storybook --filter=@e412/titanium",
-    "dev": "turbo run dev --filter=@e412/titanium-docs",
+    "dev": "pnpm build:lib && concurrently \"pnpm watch\" \"pnpm dev:docs\"",
     "dev:docs": "turbo run dev --filter=@e412/titanium-docs",
     "prepare": "husky"
   },

@@ -21,7 +21,7 @@
   "scripts": {
     "build": "rslib build",
     "build:storybook": "storybook build",
-    "watch": "rslib build --watch",
+    "dev": "rslib build --watch",
     "storybook": "storybook dev"
   },
   "dependencies": {

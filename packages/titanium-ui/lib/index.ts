@@ -50,6 +50,7 @@ export * from './base/stepper';
 export * from './base/switch';
 export * from './base/table';
 export * from './base/tabs';
+export * from './base/tags-input';
 export * from './base/textarea';
 export * from './base/theme-provider';
 export * from './base/toggle';

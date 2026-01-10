@@ -51,6 +51,7 @@ import { stepperDocumentation } from '../registry/stepper.tsx';
 import { switchDocumentation } from '../registry/switch.tsx';
 import { tableDocumentation } from '../registry/table.tsx';
 import { tabsDocumentation } from '../registry/tabs.tsx';
+import { tagsInputDocumentation } from '../registry/tags-input.tsx';
 import { textareaDocumentation } from '../registry/textarea.tsx';
 import { toggleDocumentation } from '../registry/toggle.tsx';
 import { toggleGroupDocumentation } from '../registry/toggle-group.tsx';
@@ -93,6 +94,7 @@ const componentRegistry: Record<string, ComponentDocumentation> = {
   slider: sliderDocumentation,
   switch: switchDocumentation,
   tabs: tabsDocumentation,
+  'tags-input': tagsInputDocumentation,
   textarea: textareaDocumentation,
   tooltip: tooltipDocumentation,
   'radio-group': radioGroupDocumentation,
