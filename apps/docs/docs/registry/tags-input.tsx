@@ -382,7 +382,8 @@ export function WithClearDemo() {
     {
       id: 'with-validation',
       title: 'With Validation',
-      description: 'Tags input with validation rules (pattern, max tags, min length).',
+      description:
+        'Tags input with validation rules (pattern, max tags, min length).',
       example: <WithValidationDemo />,
       code: `import { TagsInput, TagsInputInput, TagsInputTag, TagsInputTagText, TagsInputTagRemove } from '@e412/titanium';
 
@@ -506,7 +507,8 @@ export function DisabledDemo() {
         {
           name: 'validation',
           type: 'TagValidation',
-          description: 'Validation rules (maxTags, minLength, maxLength, pattern, allowDuplicates)',
+          description:
+            'Validation rules (maxTags, minLength, maxLength, pattern, allowDuplicates)',
         },
         {
           name: 'options',

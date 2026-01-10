@@ -315,8 +315,19 @@ function TagsInput({
     [state],
   );
 
+  const handleContainerKeyDown = React.useCallback(
+    (e: React.KeyboardEvent) => {
+      // Focus input on any key press on container (except Tab)
+      if (e.target === e.currentTarget && e.key !== 'Tab') {
+        state.focusInput();
+      }
+    },
+    [state],
+  );
+
   return (
     <TagsInputContext.Provider value={contextValue}>
+      {/* biome-ignore lint/a11y/useSemanticElements: Using div for styling flexibility over fieldset */}
       <div
         ref={state.containerRef}
         data-slot="tags-input"
@@ -326,6 +337,7 @@ function TagsInput({
         aria-label="Tag input"
         className={cn(tagsInputVariants({ size }), className)}
         onClick={handleContainerClick}
+        onKeyDown={handleContainerKeyDown}
         {...props}
       >
         {/* Hidden input for form submission */}
@@ -342,14 +354,9 @@ function TagsInput({
         {children}
 
         {/* Live region for announcements */}
-        <div
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-          className="sr-only"
-        >
+        <output aria-live="polite" aria-atomic="true" className="sr-only">
           {state.announcement}
-        </div>
+        </output>
       </div>
 
       {/* Autocomplete dropdown */}

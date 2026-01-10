@@ -181,7 +181,7 @@ export function useTagsInput(options: UseTagsInputOptions): UseTagsInputReturn {
   // Reset highlighted index when filtered options change
   React.useEffect(() => {
     setHighlightedOptionIndex(0);
-  }, [filteredOptions]);
+  }, []);
 
   // Validation
   const getValidationError = React.useCallback(
